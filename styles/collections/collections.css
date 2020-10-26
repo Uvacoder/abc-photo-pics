@@ -1,0 +1,75 @@
+
+
+.collections-wrapper {
+  width: 1500px;
+  min-height: 500px;
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+.collections-header {
+  min-height: 70px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background: rgba(190,190,190,0.5); */
+}
+
+.collections-header h3 {
+  color: #3D3D3D;
+  font-size: 2.8em;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.3em;
+  /* background: red; */
+}
+
+.collection-buttons {
+  min-height: 50px;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* background: rgba(190, 190, 190, 0.1); */
+}
+
+.collection-buttons a{
+  text-decoration: none;
+}
+
+.collection-buttons a span {
+  min-width: 50px;
+  margin-right: 20px;
+  padding: 8px 15px;
+  font-size: 1.08em;
+  border: 2px solid #E9BBA0;
+  border-radius: 8px;
+  color: #858585;
+  transition: all 0.2s ease-in;
+}
+
+.collection-buttons a span:hover {
+  background: #FAE7DC;
+  transition: all 0.2s ease-in;
+}
+
+/* 
+<div className="collection-buttons">
+  <Link href='/'>
+    <a><span>Celebrate</span></a>
+  </Link>
+  <Link href='/'>
+    <a><span>Trends</span></a>
+  </Link>
+  <Link href='/'>
+    <a><span>Clothing</span></a>
+  </Link>
+  <Link href='/'>
+    <a><span>Cars</span></a>
+  </Link>
+  <Link href='/'>
+    <a><span>Parties</span></a>
+  </Link>
+  <Link href='/'>
+    <a><span>Travels</span></a>
+  </Link>
+</div>     
+*/

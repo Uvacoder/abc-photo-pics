@@ -1,0 +1,55 @@
+
+.footer-menus {
+  width: 100%;
+  height: 250px;
+}
+
+.footer-menu {
+  width: 270px;
+  float: left;
+  margin: 20px 0 0 100px;
+  list-style: none;
+}
+
+.footer-menu li, .footer-stocks li {
+  height: 45px;
+}
+
+.footer-menu li a, .footer-stocks li a {
+  text-decoration: none;
+  color: #969696;
+  letter-spacing: -0.035em;
+  font-size: 1.145em;
+  transition: all 0.2s ease-in;
+}
+
+.footer-stocks {
+  float: left;
+  width: 640px;
+}
+
+.footer-stocks span {
+  display: block;
+  margin-top: 20px;
+  height: 45px;
+  font-size: 1.145em;
+  color: #D1D1D1;
+}
+
+.footer-stocks ul {
+  list-style: none;
+}
+
+.footer-stocks ul li {
+  width: 320px;
+  float: left;
+}
+
+.footer-menu li a:hover, .footer-stocks li a:hover {
+  color: #D1D1D1;
+  transition: all 0.2s ease-in;
+}
+
+.footer-menu .active, .footer-stocks .active {
+  color: #D1D1D1;
+}

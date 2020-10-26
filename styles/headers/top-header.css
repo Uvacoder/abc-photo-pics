@@ -1,0 +1,79 @@
+
+.top-nav-header {
+  width: 100%;
+  height: 60vh;
+  /* position: absolute; */
+  justify-content: space-between;
+  z-index: 50;
+  top: 0;
+}
+
+.top-nav-header h2 {
+  margin-top: 45px;
+  color: #F5F5F5;
+  font-size: 3.37em;
+  line-height: 1em;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.top-header-input {
+  flex-direction: row;
+  height: 50px;
+  margin: 10px 0 5px 0
+}
+
+.top-header-input input{
+  height: 50px;
+  width: 480px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 1.15em;
+  letter-spacing: -0.01em;
+  padding-left: 20px;
+  background: #F5F5F5;
+}
+
+.top-header-input input:focus, .top-header-input button:focus {
+  outline: none;
+}
+
+.top-header-input button {
+  border: none;
+  background: #F5F5F5;
+  height: 50px;
+  width: 50px;
+  border-radius: 0 5px 5px 0;
+}
+
+.top-header-input button:hover {
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+  background: #E8E8E8;
+}
+
+.top-header-input button:active svg {
+  transition: all 0.1s ease-in;
+  transform: scale(0.8);
+}
+
+.example-text {
+  width: 550px;
+  font-size: 0.9em;
+  color: #FFB389;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.photo-by {
+  width: 100%;
+}
+
+.photo-by span{
+  float: right;  
+  font-size: 0.9em;
+  color: #B8B8B8;
+  margin: 0 30px 14px 0;
+  letter-spacing: -0.03em;
+}
+

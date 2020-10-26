@@ -1,0 +1,106 @@
+
+.headers {
+  width: 100%;
+  min-height: 70px;
+}
+
+.top-nav {
+  width: 100%;
+  height: 80px;
+  flex-direction: row;
+  z-index: 200;
+  position: absolute;
+  justify-content: space-between;
+  background: rgba(6,39,57,1);
+}
+
+.top-nav-left {
+  flex-direction: row;
+  margin-left:60px;
+}
+
+.top-nav-left a svg {
+  width: 188px;
+  height: 42px;
+  transition: all 0.15s ease-in;
+}
+
+.top-nav-left a svg:active {
+  transform: scale(0.9);
+  transition: all 0.15s ease-in;
+}
+
+.top-input {
+  margin-left: 50px;
+  flex-direction: row;
+  height: 80px;
+  /* display: none; */
+}
+
+.top-input input{
+  height: 48px;
+  width: 480px;
+  border: none;
+  font-size: 1.15em;
+  padding-left: 16px;
+  letter-spacing: -0.03em;
+  outline: none;
+  background: #F4F4F4;
+  border-radius: 6px 0 0 6px;
+}
+
+.top-input input:focus, .top-input button {
+  outline: none;
+}
+
+.top-input button {
+  height: 48px;
+  width: 48px;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background: #F4F4F4;
+  transition: all 0.15s ease-in;
+}
+
+.top-input button:hover{
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+  background: #E8E8E8;
+}
+
+.top-input button:active svg{
+  transition: all 0.15s ease-in;
+  transform: scale(0.9);
+}
+
+.top-nav-right {
+  margin-right: 80px;
+}
+
+.top-nav-right a{
+  color: #F4F4F4;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: all 0.15s ease-in;
+}
+
+.top-nav-right a:hover {
+  color: #CFCFCF;
+  transition: all 0.15s ease-in;
+}
+
+.top-nav-right a span {
+  display: inline-block;
+  transition: all 0.1s ease-in;
+}
+
+.top-nav-right a span:active {
+  transform: scale(0.9);
+  transition: all 0.1s ease-in;
+}
+
+.top-nav-right a:nth-child(2) {
+  margin-left: 50px;
+}
+
