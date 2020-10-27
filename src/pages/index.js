@@ -2,7 +2,8 @@ import React, {useEffect} from 'react'
 import Head from 'next/head'
 import Header from '../components/Header/Header'
 import Media from '../components/Media/Media'
-import Collections from '../components/collections/Collections'
+import Collections from '../components/Collections/Collections'
+import Photo from '../components/Photo/Photo'
 import Footer from '../components/Footer/Footer'
 import {getData} from '../utils/apis/api'
 
@@ -22,8 +23,10 @@ export default function Home() {
       <Header />
 
       <main className='content-center media-container'>
+        {/* <Photo /> */}
         <Collections />
         {/* <Media /> */}
+
       </main>
       <Footer />
     </div>

@@ -6,7 +6,7 @@ function TopHeader() {
     <div className="content-center top-nav-header"
       style={{'background': "url('/images/background.jpg') no-repeat center",'backgroundSize': 'cover'}}>
       <span>{''}</span>
-      <div className='top-header'>
+      <div className='content-center top-header'>
         <h2 className='text-1'>Search stock photos and videos for free.</h2>
         <div className="content-center top-header-input">
           <input 

@@ -21,6 +21,9 @@ import '../../styles/footer/midfooter.css'
 // collections css
 import '../../styles/collections/collections.css'
 
+// photos css
+import '../../styles/photo/photo.css'
+
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }

@@ -1,0 +1,135 @@
+
+.ind-photo-wrapper {
+  width: 600px;
+  min-height: 400px;
+  /* background: rgba(190,190,190,0.1); */
+  padding: 40px 0 40px 0;
+}
+
+.ind-photo-desc {
+  width: 100%;
+  height: 80px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.artist {
+  flex-direction: row; 
+}
+
+.artist img {
+  width: 54px;
+  border-radius: 50%;
+  height: auto;
+}
+.artist-detail span {
+  display: block;
+  letter-spacing: -0.03em;
+}
+
+.name {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #767676
+}
+
+.title {
+  font-size: 0.9em;
+  color: #FC8846
+}
+
+.artist-detail {
+  margin-left: 10px;
+  justify-content: flex-start;
+}
+
+.add-favorites {
+  flex-direction: row;
+  transition: all 0.2s ease-in
+}
+
+.add-favorites svg {
+  width: 20px;
+  height: 17px;
+  margin-right: 12px;
+}
+
+.add-favorites span {
+  letter-spacing: -0.03em;
+  color: #767676;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+}
+
+.add-favorites:hover {
+  cursor: pointer;
+}
+
+.add-favorites:hover span {
+  color: #525252;
+  transition: all 0.2s ease-in;
+}
+
+.ind-photo-download {
+  width: 100%;
+}
+
+.photo-tags {
+  margin: 18px 0;
+  width: 480px;
+  color: #525252;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.photo-tags span{
+  color: teal;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.ind-photo-download img{
+  margin-top: 10px;
+  width: 480px;
+  height: auto;
+}
+
+
+.ind-photo-download button {
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  width: 180px;
+  height: 50px;
+  background: #FFE7DA;
+  border: none;
+  border-radius: 8px;
+  color: #777777;
+  transition: all 0.2s ease-in;
+}
+
+
+.ind-photo-download button:hover {
+  cursor: pointer;
+  background: #EED4C4;
+  transition: all 0.2s ease-in;
+}
+
+.ind-photo-download button:active {
+  transform: scale(0.8);
+  transition: all 0.2s ease-in;
+}
+
+.ind-photo-download button:focus {
+  outline: none;
+}
+/* 
+<div className="content-center photo-download">
+  <img src="/images/p1.jpg" alt=""/>
+  <div className="photo-tags">
+    Photo tags: <span>floral violet dark and gray</span>
+  </div>
+  <button>Download Photo</button>
+</div>
+*/

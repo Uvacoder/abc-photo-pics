@@ -8,7 +8,7 @@ function Header() {
     <>
       <header className='headers'>
         <TopNav />
-        {/* <TopHeader /> */}
+        <TopHeader />
       </header>
       <MidHeader />
     </>

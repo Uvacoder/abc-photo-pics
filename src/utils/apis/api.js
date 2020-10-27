@@ -23,7 +23,7 @@ const _getToken = async () => {
 
 
 export const getData = async () => {
-  let token = await _getToken()
+  // let token = await _getToken()
 
 
 }
