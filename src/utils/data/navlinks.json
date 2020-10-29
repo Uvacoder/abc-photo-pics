@@ -1,0 +1,191 @@
+
+
+{
+  "menus": ["Home", "Photos", "Videos", "Discover"],
+  "collections": [
+    {
+      "name": "Popular Collections",
+      "buttonnames": ["Celebrate", "Trends", "Clothing", "Cars", "Liquors", "Traveling"],
+      "collections": [
+        {
+          "name": "Birthdays",
+          "images": ["birthday01","birthday02","birthday03"]
+        },
+        {
+          "name": "Seasons",
+          "images": ["seasons01","seasons02","seasons03"]
+        },
+        {
+          "name": "Conversations",
+          "images": ["conversations01","conversations02","conversations03"]
+        }
+      ]
+    },
+    {
+      "name": "Recommended For You",
+      "buttonnames": ["Kitchens", "Parking", "Construction", "Relaxing", "Beach", "Swim"],
+      "collections": [
+        {
+          "name": "House Interior",
+          "images": ["house-interiors01","house-interiors02","house-interiors03"]
+        },
+        {
+          "name": "Streets & Alleys",
+          "images": ["streets-&-alleys01","streets-&-alleys02","streets-&-alleys03"]
+        },
+        {
+          "name": "Vacations",
+          "images": ["vacations01","vacations02","vacations03"]
+        }
+      ]
+    },
+    {
+      "name": "Animal Collections",
+      "buttonnames": ["Fish", "Felines", "Birds", "Insects", "Mammals", "Reptiles"],
+      "collections": [
+        {
+          "name": "Cute Cats",
+          "images": ["cute-cats01","cute-cats02","cute-cats03"]
+        },
+        {
+          "name": "Animals",
+          "images": ["animals01","animals02","animals03"]
+        },
+        {
+          "name": "Wild Animals",
+          "images": ["wild-animals01","wild-animals02","wild-animals03"]
+        }
+      ]
+    },
+    {
+      "name": "Photography",
+      "buttonnames": ["Moutains", "Vegetables", "Buildings", "Sunrise", "Fruits", "Lanscapes"],
+      "collections": [
+        {
+          "name": "Nature",
+          "images": ["nature01","nature02","nature03"]
+        },
+        {
+          "name": "Food",
+          "images": ["food01","food02","food03"]
+        },
+        {
+          "name": "Cities",
+          "images": ["cities01","cities02","cities03"]
+        }
+      ]
+    },
+    {
+      "name": "Background Photos",
+      "buttonnames": ["Woods", "Waterfalls", "Fantasy", "Textured", "Stars", "Pastels"],
+      "collections": [
+        {
+          "name": "Art Background",
+          "images": ["art-background01","art-background02","art-background03"]
+        },
+        {
+          "name": "Pretty Background",
+          "images": ["pretty-background01","pretty-background02","pretty-background03"]
+        },
+        {
+          "name": "Florals",
+          "images": ["florals01","florals02","florals03"]
+        }
+      ]
+    },
+    {
+      "name": "Health Collections",
+      "buttonnames": ["Diet", "Yoga", "Excercise", "Medicine", "Fitness", "Nutrition"],
+      "collections": [
+        {
+          "name": "Health & Lifestyle",
+          "images": ["health-&-lifestyle01","health-&-lifestyle02","health-&-lifestyle03"]
+        },
+        {
+          "name": "Healthy Food",
+          "images": ["healthy-food01","healthy-food02","healthy-food03"]
+        },
+        {
+          "name": "Wellness",
+          "images": ["wellness01","wellness02","wellness03"]
+        }
+      ]
+    },
+    {
+      "name": "Marine Collections",
+      "buttonnames": ["Aquascapes", "Underwater", "Sea Mammals", "Fishing", "Oceans", "Aquariums"],
+      "collections": [
+        {
+          "name": "Marine Life",
+          "images": ["marine-life01","marine-life02","marine-life03"]
+        },
+        {
+          "name": "Seascapes",
+          "images": ["seascapes01","seascapes02","seascapes03"]
+        },
+        {
+          "name": "Sea Fish",
+          "images": ["sea-fish01","sea-fish02","sea-fish03"]
+        }
+      ]
+    },
+    {
+      "name": "Art Collections",
+      "buttonnames": ["Artists", "Murals", "Grafitti", "Museums", "Modern Art", "Renaissance Art"],
+      "collections": [
+        {
+          "name": "Paintings",
+          "images": ["paintings01","paintings02","paintings03"]
+        },
+        {
+          "name": "Sculptures",
+          "images": ["sculptures01","sculptures02","sculptures03"]
+        },
+        {
+          "name": "Artworks",
+          "images": ["artworks01","artworks02","artworks03"]
+        }
+      ]
+    },
+    {
+      "name": "Drink Collections",
+      "buttonnames": ["Wines", "Brewery", "Vodka", "Rhum", "Coffee", "Milk"],
+      "collections": [
+        {
+          "name": "Fresh Juice",
+          "images": ["fresh-juice01","fresh-juice02","fresh-juice03"]
+        },
+        {
+          "name": "Water",
+          "images": ["water01","water02","water03"]
+        },
+        {
+          "name": "Fresh Tea",
+          "images": ["fresh-tea01","fresh-tea02","fresh-tea03"]
+        }
+      ]
+    },
+    {
+      "name": "Botany Collections",
+      "buttonnames": ["Gardens", "Sprouts", "Flowers", "Big Trees", "Pots", "Grass"],
+      "collections": [
+        {
+          "name": "Plants",
+          "images": ["plants01","plants02","plants03"]
+        },
+        {
+          "name": "Seeds",
+          "images": ["seeds01","seeds02","seeds03"]
+        },
+        {
+          "name": "Trees",
+          "images": ["trees01","trees02","trees03"]
+        }
+      ]
+    }
+    
+  ]
+}
+
+
+

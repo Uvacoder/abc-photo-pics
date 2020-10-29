@@ -9,6 +9,10 @@ import Dribbble from './Svg/Dribbble'
 import Linkedin from './Svg/Linkedin'
 import Twitter from './Svg/Twitter'
 import Heart from './Svg/Heart'
+import Close from './Svg/Close'
+import Burger from './Svg/Burger'
+import Photo from './Svg/Photo'
+import Video from './Svg/Video'
 
 function Svg(props) {
 
@@ -21,6 +25,10 @@ function Svg(props) {
             props.svg === 'dribbble' ? <Dribbble /> : 
             props.svg === 'linkedin' ? <Linkedin /> : 
             props.svg === 'twitter' ? <Twitter /> : 
+            props.svg === 'burger' ? <Burger /> : 
+            props.svg === 'close' ? <Close /> : 
+            props.svg === 'photo' ? <Photo /> : 
+            props.svg === 'video' ? <Video /> : 
             props.svg === 'heart' ? <Heart /> : null
 
 

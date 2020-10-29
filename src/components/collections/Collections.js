@@ -7,64 +7,131 @@ function Collections() {
 
 
 
-      <div className="collections-header">
-        <h3 className='text-1'>Popular Collections</h3>
-        <div className="content-center text-2 collection-buttons">
-          <Link href='/'>
-            <a><span>Celebrate</span></a>
-          </Link>
-          <Link href='/'>
-            <a><span>Trends</span></a>
-          </Link>
-          <Link href='/'>
-            <a><span>Clothing</span></a>
-          </Link>
-          <Link href='/'>
-            <a><span>Cars</span></a>
-          </Link>
-          <Link href='/'>
-            <a><span>Parties</span></a>
-          </Link>
-          <Link href='/'>
-            <a><span>Travels</span></a>
-          </Link>
+      <section className="collections-header">
+        <h3 className='text-1 ts-2 collection-title'>Popular Collections</h3>
+        <div className="content-center text-2 ts-6 collection-buttons">
+          <div className="button-scroll">
+            <Link href='/'>
+              <a><span>Celebrate</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Trends</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Clothing</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Cars</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Parties</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Travels</span></a>
+            </Link>
+          </div>
         </div>        
         <div className="collection-images-wrapper">
-          <Link href='/'>
-            <a>
-              <div className="collection-images">
-                <img src="/images/birthday01.jpg" alt=""/>
-                <img src="/images/birthday02.jpg" alt=""/>
-                <img src="/images/birthday03.jpg" alt=""/>
-                <h3 className='text-1'>Birthdays</h3>
-              </div>
-            </a>
-          </Link>
-          <Link href='/'>
-            <a>
-              <div className="collection-images">
-                <img src="/images/seasons01.jpg" alt=""/>
-                <img src="/images/seasons02.jpg" alt=""/>
-                <img src="/images/seasons03.jpg" alt=""/>
-                <h3 className='text-1'>Seasons</h3>
-              </div>
-            </a>
-          </Link>
-          <Link href='/'>
-            <a>
-              <div className="collection-images">
-                <img src="/images/conversations01.jpg" alt=""/>
-                <img src="/images/conversations02.jpg" alt=""/>
-                <img src="/images/conversations03.jpg" alt=""/>
-                <h3 className='text-1'>Conversations</h3>
-              </div>
-            </a>
-          </Link>
+          <div className="image-scroll">
+            <Link href='/'>
+              <a>
+                <div className="collection-images">
+                  <img src="/images/birthday01.jpg" alt=""/>
+                  <img src="/images/birthday02.jpg" alt=""/>
+                  <img src="/images/birthday03.jpg" alt=""/>
+                  <h3 className='text-1 ts-3 collection-album'>Birthdays</h3>
+                </div>
+              </a>
+            </Link>
+            <Link href='/'>
+              <a>
+                <div className="collection-images">
+                  <img src="/images/seasons01.jpg" alt=""/>
+                  <img src="/images/seasons02.jpg" alt=""/>
+                  <img src="/images/seasons03.jpg" alt=""/>
+                  <h3 className='text-1 ts-3 collection-album'>Seasons</h3>
+                </div>
+              </a>
+            </Link>
+            <Link href='/'>
+              <a>
+                <div className="collection-images">
+                  <img src="/images/conversations01.jpg" alt=""/>
+                  <img src="/images/conversations02.jpg" alt=""/>
+                  <img src="/images/conversations03.jpg" alt=""/>
+                  <h3 className='text-1 ts-3 collection-album'>Conversations</h3>
+                </div>
+              </a>
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
 
 
 
+      <section className="collections-header">
+        <h3 className='text-1 ts-2 collection-title'>Popular Collections</h3>
+        <div className="content-center text-2 ts-6 collection-buttons">
+          <div className="button-scroll">
+            <Link href='/'>
+              <a><span>Celebrate</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Trends</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Clothing</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Cars</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Parties</span></a>
+            </Link>
+            <Link href='/'>
+              <a><span>Travels</span></a>
+            </Link>
+          </div>
+        </div>        
+        <div className="collection-images-wrapper">
+          <div className="image-scroll">
+            <Link href='/'>
+              <a>
+                <div className="collection-images">
+                  <img src="/images/house-interiors01.jpg" alt=""/>
+                  <img src="/images/house-interiors02.jpg" alt=""/>
+                  <img src="/images/house-interiors03.jpg" alt=""/>
+                  <h3 className='text-1 ts-3 collection-album'>House Interiors</h3>
+                </div>
+              </a>
+            </Link>
+            <Link href='/'>
+              <a>
+                <div className="collection-images">
+                 <img src="/images/streets-&-alleys01.jpg" alt=""/>
+                  <img src="/images/streets-&-alleys02.jpg" alt=""/>
+                  <img src="/images/streets-&-alleys03.jpg" alt=""/>
+                  <h3 className='text-1 ts-3 collection-album'>Streets & Alleys</h3>
+                </div>
+              </a>
+            </Link>
+            <Link href='/'>
+              <a>
+                <div className="collection-images">
+                  <img src="/images/vacations01.jpg" alt=""/>
+                  <img src="/images/vacations02.jpg" alt=""/>
+                  <img src="/images/vacations03.jpg" alt=""/>
+                  <h3 className='text-1 ts-3 collection-album'>Vacations</h3>
+                </div>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      
+
+{/* 
 
       <div className="collections-header">
         <h3 className='text-1'>Recommended For You</h3>
@@ -599,7 +666,7 @@ function Collections() {
             </a>
           </Link>
         </div>
-      </div>
+      </div> */}
 
 
     </div>

@@ -2,7 +2,6 @@
 .top-nav-header {
   width: 100%;
   height: 60vh;
-  /* position: absolute; */
   justify-content: space-between;
   z-index: 50;
   top: 0;
@@ -11,7 +10,6 @@
 .top-nav-header h2 {
   margin-top: 45px;
   color: #F5F5F5;
-  font-size: 3.2em;
   line-height: 1em;
   letter-spacing: -0.03em;
   font-weight: 500;
@@ -28,7 +26,6 @@
   width: 480px;
   border: none;
   border-radius: 5px 0 0 5px;
-  font-size: 1.15em;
   letter-spacing: -0.01em;
   padding-left: 20px;
   background: #F5F5F5;
@@ -59,8 +56,6 @@
 
 .example-text {
   text-align: center;
-  /* width: 550px; */
-  font-size: 0.9em;
   color: #FFB389;
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -72,9 +67,74 @@
 
 .photo-by span{
   float: right;  
-  font-size: 0.9em;
   color: #B8B8B8;
   margin: 0 30px 14px 0;
   letter-spacing: -0.03em;
 }
 
+@media (max-width: 1068px) {
+  .top-header-input input{
+    width: 420px;
+    height: 45px;
+  }
+  .top-header-input button {
+    height: 45px;
+    width: 45px;
+  }
+  .top-header-input button svg{
+    height: 20px;
+    width: 21px;
+  }
+}
+
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  .top-nav-header {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-header-input input{
+    width: 390px;
+  }
+}
+
+@media (max-width: 568px) {
+  .top-header-input input{
+    width: 360px;
+  }
+}
+
+@media (max-width: 468px) {
+  .top-header {
+    margin-top: 70px
+  }
+  .top-nav-header h2 {
+    width: calc(100% - 50px);
+    margin: 0 20px;
+    text-align: center;
+    line-height: 0.8em;
+  }
+  .top-header-input {
+    width: calc(100% - 32px);
+  }
+  .top-header-input input{
+    width: calc(100% - 92px);
+    height: 42px;
+  }
+  .top-header-input button {
+    height: 42px;
+    width: 42px;
+  }
+  .example-text {
+    width: calc(100% - 22px);
+  }
+  .photo-by span{
+    margin: 0;
+    margin-bottom: 12px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    float: none;  
+  }
+}

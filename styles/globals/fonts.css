@@ -4,7 +4,349 @@
 .text-1 {
   font-family: 'Gidugu', sans-serif;
 }
-
 .text-2 {
   font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+.ts-1 {
+  font-size: 2.8em;
+}
+.ts-2 {
+  font-size: 2.4em;
+}
+.ts-3 {
+  font-size: 2.1em;
+}
+.ts-4 {
+  font-size: 1.12em;
+}
+.ts-5 {
+  font-size: 1.05em;
+} 
+.ts-6 {
+  font-size: 1.02em;
+}
+.ts-7 {
+  font-size: .96em;
+}
+.ts-8 {
+  font-size: .92em;
+}
+.ts-9 {
+  font-size: .89em;
+}
+.ts-10 {
+  font-size: .86em;
+}
+.ts-11 {
+  font-size: .84em;
+}
+
+@media(max-width: 1368px){
+  .ts-1 {
+    font-size: 2.77em;
+  }
+  .ts-2 {
+    font-size: 2.37em;
+  }
+  .ts-3 {
+    font-size: 2.07em;
+  }
+  .ts-4 {
+    font-size: 1.11em;
+  }
+  .ts-5 {
+    font-size: 1.04em;
+  } 
+}
+
+@media(max-width: 1268px){
+  .ts-1 {
+    font-size: 2.74em;
+  }
+  .ts-2 {
+    font-size: 2.34em;
+  }
+  .ts-3 {
+    font-size: 2.04em;
+  }
+  .ts-4 {
+    font-size: 1.1em;
+  }
+  .ts-5 {
+    font-size: 1.03em;
+  } 
+  .ts-6 {
+    font-size: 1em;
+  }
+  .ts-7 {
+    font-size: .94em;
+  }
+  .ts-8 {
+    font-size: .9em;
+  }
+  .ts-9 {
+    font-size: .87em;
+  }
+  .ts-10 {
+    font-size: .83em;
+  }
+
+  .ts-11 {
+    font-size: .84em;
+  } 
+}
+
+@media(max-width: 1168px){
+  .ts-1 {
+    font-size: 2.71em;
+  }
+  .ts-2 {
+    font-size: 2.31em;
+  }
+  .ts-3 {
+    font-size: 2.01em;
+  }
+  .ts-4 {
+    font-size: 1.09em;
+  }
+  .ts-5 {
+    font-size: 1.02em;
+  } 
+  .ts-11 {
+    font-size: .8em;
+  } 
+}
+
+@media(max-width: 1068px){
+  .ts-1 {
+    font-size: 2.69em;
+  }
+  .ts-2 {
+    font-size: 2.29em;
+  }
+  .ts-3 {
+    font-size: 1.99em;
+  }
+  .ts-4 {
+    font-size: 1.08em;
+  }
+  .ts-5 {
+    font-size: 1.01em;
+  } 
+  .ts-6 {
+    font-size: .98em;
+  }
+  .ts-7 {
+    font-size: .92em;
+  }
+  .ts-8 {
+    font-size: .88em;
+  }
+  .ts-9 {
+    font-size: .85em;
+  }
+  .ts-10 {
+    font-size: .81em;
+  }
+}
+
+@media(max-width: 968px){
+  .ts-1 {
+    font-size: 2.66em;
+  }
+  .ts-2 {
+    font-size: 2.26em;
+  }
+  .ts-3 {
+    font-size: 1.96em;
+  }
+  .ts-4 {
+    font-size: 1.07em;
+  }
+  .ts-5 {
+    font-size: 1em;
+  } 
+}
+
+@media(max-width: 868px){
+  .ts-1 {
+    font-size: 2.63em;
+  }
+  .ts-2 {
+    font-size: 2.23em;
+  }
+  .ts-3 {
+    font-size: 1.93em;
+  }
+  .ts-4 {
+    font-size: 1.06em;
+  }
+  .ts-5 {
+    font-size: .99em;
+  } 
+  .ts-6 {
+    font-size: .96em;
+  }
+  .ts-7 {
+    font-size: .9em;
+  }
+  .ts-8 {
+    font-size: .86em;
+  }
+  .ts-9 {
+    font-size: .83em;
+  }
+  .ts-10 {
+    font-size: .79em;
+  }
+  .ts-11 {
+    font-size: .77em;
+  } 
+}
+
+@media(max-width: 768px){
+  .ts-1 {
+    font-size: 2.61em;
+  }
+  .ts-2 {
+    font-size: 2.21em;
+  }
+  .ts-3 {
+    font-size: 1.91em;
+  }
+  .ts-4 {
+    font-size: 1.05em;
+  }
+  .ts-5 {
+    font-size: .98em;
+  } 
+}
+
+@media(max-width: 668px){
+  .ts-1 {
+    font-size: 2.58em;
+  }
+  .ts-2 {
+    font-size: 2.18em;
+  }
+  .ts-3 {
+    font-size: 1.88em;
+  }
+  .ts-4 {
+    font-size: 1.04em;
+  }
+  .ts-5 {
+    font-size: .97em;
+  } 
+  .ts-6 {
+    font-size: .94em;
+  }
+  .ts-7 {
+    font-size: .88em;
+  }
+  .ts-8 {
+    font-size: .84em;
+  }
+  .ts-9 {
+    font-size: .81em;
+  }
+  .ts-10 {
+    font-size: .77em;
+  }
+  .ts-11 {
+    font-size: .75em;
+  } 
+}
+
+@media(max-width: 568px){
+  .ts-1 {
+    font-size: 2.55em;
+  }
+  .ts-2 {
+    font-size: 2.15em;
+  }
+  .ts-3 {
+    font-size: 1.85em;
+  }
+  .ts-4 {
+    font-size: 1.035em;
+  }
+  .ts-5 {
+    font-size: .965em;
+  } 
+}
+
+
+@media(max-width: 468px){
+  .ts-1 {
+    font-size: 2.53em;
+  }
+  .ts-2 {
+    font-size: 2.13em;
+  }
+  .ts-3 {
+    font-size: 1.83em;
+  }
+  .ts-4 {
+    font-size: 1.03em;
+  }
+  .ts-5 {
+    font-size: .96em;
+  } 
+  .ts-6 {
+    font-size: .93em;
+  }
+  .ts-7 {
+    font-size: .87em;
+  }
+  .ts-8 {
+    font-size: .83em;
+  }
+  .ts-9 {
+    font-size: .8em;
+  }
+  .ts-10 {
+    font-size: .75em;
+  }
+}
+
+
+@media(max-width: 368px){
+  .ts-1 {
+    font-size: 2.5em;
+  }
+  .ts-2 {
+    font-size: 2.1em;
+  }
+  .ts-3 {
+    font-size: 1.8em;
+  }
+  .ts-4 {
+    font-size: 1.02em;
+  }
+  .ts-5 {
+    font-size: .95em;
+  } 
+  .ts-6 {
+    font-size: .92em;
+  }
+  .ts-7 {
+    font-size: .86em;
+  }
+  .ts-8 {
+    font-size: .82em;
+  }
+  .ts-9 {
+    font-size: .79em;
+  }
+  .ts-10 {
+    font-size: .74em;
+  }
+  .ts-11 {
+    font-size: .72em;
+  } 
 }

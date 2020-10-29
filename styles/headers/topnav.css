@@ -20,8 +20,8 @@
 }
 
 .top-nav-left a svg {
-  width: 188px;
-  height: 42px;
+  width: 156px;
+  height: 35px;
   transition: all 0.15s ease-in;
 }
 
@@ -34,16 +34,14 @@
   margin-left: 50px;
   flex-direction: row;
   height: 80px;
-  /* display: none; */
 }
 
 .top-input input{
-  height: 48px;
+  height: 45px;
   width: 480px;
   border: none;
-  font-size: 1.15em;
   padding-left: 16px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   outline: none;
   background: #F4F4F4;
   border-radius: 6px 0 0 6px;
@@ -54,8 +52,8 @@
 }
 
 .top-input button {
-  height: 48px;
-  width: 48px;
+  height: 45px;
+  width: 45px;
   border: none;
   border-radius: 0 6px 6px 0;
   background: #F4F4F4;
@@ -80,7 +78,6 @@
 .top-nav-right a{
   color: #F4F4F4;
   text-decoration: none;
-  font-size: 1.1em;
   font-weight: 600;
   transition: all 0.15s ease-in;
 }
@@ -104,3 +101,188 @@
   margin-left: 50px;
 }
 
+@media (max-width: 1468px) {  
+  .top-nav-left {
+    margin-left:50px;
+  }
+  .top-input {
+    margin-left: 40px;
+  }
+  .top-nav-right {
+    margin-right: 70px;
+  }
+  .top-nav-right a:nth-child(2) {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 1368px) {  
+  .top-nav {
+    height: 75px;
+  }
+  .top-nav-left {
+    margin-left: 45px;
+  }
+  .top-input {
+    margin-left: 35px;
+    height: 75px;
+  }
+  .top-input input{
+    width: 450px;
+    height: 40px;
+  }
+  .top-input button {
+    height: 40px;
+    width: 40px;
+  }
+  .top-input button svg {
+    width: 21px;
+    height: 20px;
+  }
+  .top-nav-right {
+    margin-right: 65px;
+  }
+  .top-nav-right a:nth-child(2) {
+    margin-left: 35px;
+  }
+}
+
+@media (max-width: 1268px) {  
+  .top-nav-left {
+    margin-left: 40px;
+  }
+  .top-nav-left a svg {
+    width: 148px;
+    height: 33px;
+  }
+  .top-input {
+    margin-left: 30px;
+  }
+  .top-input input{
+    width: 420px;
+  }
+  .top-nav-right {
+    margin-right: 60px;
+  }
+  .top-nav-right a:nth-child(2) {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 1168px) {  
+  .top-nav-left {
+    margin-left: 35px;
+  }
+  .top-nav-left a svg {
+    width: 139px;
+    height: 31px;
+  }
+  .top-input, .top-nav-right a:nth-child(2) {
+    margin-left: 25px;
+  }
+  .top-input input{
+    width: 390px;
+  }
+  .top-input button svg {
+    width: 20px;
+    height: 19px;
+  }
+  .top-nav-right {
+    margin-right: 55px;
+  }
+}
+
+@media (max-width: 1068px) {  
+  .top-nav {
+    height: 70px;
+  }
+  .top-nav-left a svg {
+    width: 130px;
+    height: 29px;
+  }
+  .top-input {
+    height: 70px;
+  }
+  .top-input input{
+    width: 350px;
+  }
+  .top-nav-right {
+    margin-right: 45px;
+  }
+}
+
+@media (max-width: 968px) {  
+  .top-nav {
+    height: 65px;
+  }
+  .top-nav-left {
+    margin-left: 30px;
+  }
+  .top-nav-left a svg {
+    width: 121px;
+    height: 27px;
+  }
+  .top-input {
+    height: 75px;
+    margin-left: 20px;
+  }
+  .top-input input{
+    width: 320px;
+  }
+  .top-nav-right {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 868px) {  
+  .top-nav {
+    height: 60px;
+  }
+  .top-nav-left {
+    margin-left: 25px;
+  }
+  .top-nav-left a svg {
+    width: 112px;
+    height: 25px;
+  }
+  .top-input {
+    height: 70px;
+  }
+  .top-input input{
+    width: 280px;
+    height: 35px;
+  }
+  .top-input button {
+    height: 35px;
+    width: 35px;
+  }
+  .top-input button svg {
+    width: 19px;
+    height: 18px;
+  }
+  .top-nav-right {
+    margin-right: 35px;
+  }
+  .top-nav-right a:nth-child(2) {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-input, .top-nav-right a:nth-child(2) {
+    margin-left: 15px;
+  }
+  .top-input input {
+    width: 230px;
+  }
+  .top-nav-right {
+    margin-right: 30px;
+  }
+}
+
+
+@media (max-width: 668px) {
+  .top-input, .top-nav-right {
+    display: none;
+  }
+}

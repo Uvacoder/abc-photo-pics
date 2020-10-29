@@ -2,19 +2,18 @@
 .mid-header {
   width: 100%;
   padding-top: 5px;
-  height: 70px;
+  height: 60px;
   flex-direction: row;
   border-bottom: 2px solid #D8D8D8;
 }
 
 .mid-header-menu{
-  font-size: 1.22em;
   font-weight: 600;
   width: 80px;
   line-height: 70px;
-  height: 70px;
+  height: 60px;
   text-align: center;
-  margin: 20px;
+  margin: 10px;
 }
 
 .mid-header-menu a{
@@ -29,9 +28,39 @@
 }
 
 .mid-header .active {
-  border-bottom: 4px solid #EF9461;
+  border-bottom: 2px solid #EF9461;
 }
 
 .mid-header .active a{
   color: #EF9461;
+}
+
+
+@media (max-width: 1168px) {
+  .mid-header {
+    height: 50px;
+  }
+  .mid-header-menu {
+    height: 50px;
+    width: 75px;
+  }
+}
+
+@media (max-width: 968px) {
+  .mid-header-menu {
+    width: 70px;
+  }
+}
+
+@media (max-width: 468px) {
+  .mid-header-menu {
+    margin: 2px;
+    width: 65px;
+  }
+}
+
+@media (max-width: 368px) {
+  .mid-header-menu {
+    width: 60px;
+  }
 }

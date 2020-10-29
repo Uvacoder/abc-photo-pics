@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 function MidHeader() {
   return (
-    <div className="content-center mid-header text-2">
+    <div className="content-center mid-header text-2 ts-4">
       <div className="content-center mid-header-menu active">
         <Link href='/'>
           <a>Home</a>

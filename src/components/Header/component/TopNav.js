@@ -1,40 +1,66 @@
 import React from 'react'
 import Link from 'next/link'
+import navdata from '../../../utils/data/navlinks.json'
 import Svg from '../../Svg/index'
+import Menu from './components/Menu'
+import Collections from './components/Collections'
+import InputWide from './components/InputBig'
+import InputShort from './components/InputShort'
 
-function TopNav() {
+function TopNav(props) {
+  const showMenu = () => {
+    const menu = document.querySelector('.top-nav-small-menu')
+    menu.classList.toggle('show-side-menu')
+  }
+  
   return (
     <div className="content-center top-nav">
 
-        <div className="content-center top-nav-left">
-          <Link href='/'>
-            <a>
-              <Svg svg='topnav'/>
-            </a>
-          </Link>
-          <div className="content-center top-input">
-            <input 
-              className='text-2'
-              type="text" 
-              placeholder='Search photos and videos'/>
-            <button>
-              <span>
-                <Svg svg='search'/>
-              </span>
-            </button>
-          </div>
-        </div>
-        
-        <div className="top-nav-right text-2">
-          <Link href='/'>
-            <a><span>Explore</span></a>
-          </Link>
-          <Link href='/'>
-            <a><span>My Favorites</span></a>
-          </Link>
+      <div className="content-center top-nav-left">
+        <Link href='/'>
+          <a>
+            <Svg svg='topnav'/>
+          </a>
+        </Link>
+        {props.withInput ? <InputWide /> : null}
+      </div>
+      
+      <div className="top-nav-right text-2 ts-6">
+        <Link href='/'>
+          <a><span>Explore</span></a>
+        </Link>
+        <Link href='/'>
+          <a><span>My Favorites</span></a>
+        </Link>
+      </div>
+
+      <div className="top-nav-small">
+        <div className="burger-container"
+          onClick={showMenu}>
+          <Svg svg='burger'/>
         </div>
 
+        <div className="top-nav-small-menu">
+          <div className="menu-close"
+            onClick={showMenu}>
+            <Svg svg='close'/>
+          </div>
+          {props.withInput ? <InputShort /> : null}
+
+          <div className="top-nav-menulist text-2">
+            <ul className='top-menu-list'>
+              <Menu menus={navdata.menus} />
+            </ul>
+            <div className='top-menu-list'>
+              <span>Stock Collections</span>
+              <ul>
+                <Collections collections={navdata.collections}/>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   )
 }
 

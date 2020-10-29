@@ -25,8 +25,8 @@ footer {
 }
 
 .footer-top-icons span:first-child svg{
-  width: 170px;
-  height: 38px;
+  width: 156px;
+  height: 35px;
   transition: all 0.2s ease-in;
 }
 
@@ -49,4 +49,121 @@ footer {
 .footer-top-icons span:first-child svg:active{
   transform: scale(0.8);
   transition: all 0.2s ease-in;
+}
+
+@media (max-width: 1620px) {
+  .footer-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1368px) {
+  .footer-top-icons {
+    height: 85px;
+  }
+  .footer-top-icons span:first-child svg {
+    width: 142px;
+    height: 32px;
+  }
+  .footer-top-icons span:nth-child(2) img {
+    width: 35px;
+  }
+}
+
+@media (max-width: 1068px) {
+  .footer-top-icons {
+    height: 80px;
+  }
+  .footer-top-icons span:first-child {
+    margin-left: 70px
+  }
+  .footer-top-icons span:first-child svg {
+    width: 137px;
+    height: 30px;
+  }
+  .footer-top-icons span:nth-child(2) {
+    margin-right: 70px;
+  }
+  .footer-top-icons span:nth-child(2) img {
+    width: 32px;
+  }
+}
+
+@media (max-width: 868px){
+  footer {
+    height: 530px;
+  }
+  .footer-wrapper {
+    height: 750px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top-icons span:first-child {
+    margin-left: 40px
+  }
+  .footer-top-icons span:first-child svg {
+    width: 137px;
+    height: 30px;
+  }
+  .footer-top-icons span:nth-child(2) {
+    margin-right: 40px;
+  }
+  .footer-top-icons span:nth-child(2) img {
+    width: 32px;
+  }
+}
+
+@media (max-width: 568px) {
+  footer {
+    height: 680px;
+  }
+  .footer-wrapper {
+    height: 750px;
+  }
+  .footer-top-icons span:first-child {
+    margin-left: 30px
+  }
+  .footer-top-icons span:first-child svg {
+    width: 125px;
+    height: 28px;
+  }
+  .footer-top-icons span:nth-child(2) {
+    margin-right: 30px;
+  }
+  .footer-top-icons span:nth-child(2) img {
+    width: 30px;
+  }
+}
+
+@media (max-width: 468px) {
+  footer {
+    height: 900px;
+  }
+  .footer-wrapper {
+    height: 900px;
+  }
+  .footer-top-icons {
+    flex-direction: column;
+    height: 130px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .footer-top-icons span:first-child {
+    margin-bottom: 18px;
+    margin-left: 40px
+  }
+  .footer-top-icons span:first-child svg {
+    width: 125px;
+    height: 28px;
+  }
+  .footer-top-icons span:nth-child(2) {
+    margin-left: 40px;
+    flex-direction: row-reverse;
+  }
+  .footer-top-icons span:nth-child(2) img {
+    margin-left: 0px;
+    margin-right: 2px;
+    width: 28px;
+  }
 }

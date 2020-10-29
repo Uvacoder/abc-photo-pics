@@ -16,8 +16,8 @@ function Footer() {
               </a>
             </Link>
           </span>
-          <span className="content-center footer-fotopics-icon text-2">
-            Photo and video source from
+          <span className="content-center footer-fotopics-icon text-2 ts-10">
+            Photo and video source
             <a href='/' 
               target='_blank'
               rel="nofollow">
@@ -30,44 +30,44 @@ function Footer() {
 
         <div className="footer-menus text-2">
           <ul className='footer-menu'>
-            <li>
+            <li className='ts-5'>
               <Link href='/'><a className='active'>Home</a></Link>
             </li>
-            <li>
+            <li className='ts-5'>
               <Link href='/'><a>Stock Photos</a></Link>
             </li>
-            <li>
+            <li className='ts-5'>
               <Link href='/'><a>Stock Videos</a></Link>
             </li>
-            <li>
+            <li className='ts-5'>
               <Link href='/'><a>Discover</a></Link>
             </li>
           </ul>
           <div className='footer-stocks'>
             <span>Stock Collections</span>
             <ul>
-              <li>
+              <li className='ts-5'>
                 <Link href='/'><a>Popular Collections</a></Link>
               </li>
-              <li>
+              <li className='ts-5'>
                 <Link href='/'><a>Animal Collections</a></Link>
               </li>
-              <li>
+              <li className='ts-5'>
                 <Link href='/'><a>Photography Collections</a></Link>
               </li>
-              <li>
+              <li className='ts-5'>
                 <Link href='/'><a>Background Collections</a></Link>
               </li>
-              <li>
+              <li className='ts-5'>
                 <Link href='/'><a>Health and Lifestyle</a></Link>
               </li>
-              <li>
+              <li className='ts-5'>
                 <Link href='/'><a>Marine Photography</a></Link>
               </li>
-              <li>
+              <li className='ts-5'>
                 <Link href='/'><a>Arts and Museums</a></Link>
               </li>
-              <li>
+              <li className='ts-5'>
                 <Link href='/'><a>Drink and Collections</a></Link>
               </li>
               
@@ -80,7 +80,7 @@ function Footer() {
 
 
         <div className="content-center footer-icons">
-          <span className='text-2 text-learn'>
+          <span className='text-2 ts-9 text-learn'>
             A project for fun, learning and creativity.</span>
           <div className="content-center footer-menu-icons">
             <a href="/"
@@ -109,7 +109,7 @@ function Footer() {
               <span><Svg svg='linkedin'/></span>
             </a>
           </div>
-          <span className='text-2 text-copyright'>&#169; Aiman Adlawan 2020.</span>
+          <span className='text-2 ts-9 text-copyright'>&#169; Aiman Adlawan 2020.</span>
         </div>
 
 

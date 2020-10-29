@@ -21,8 +21,19 @@ let a = "6"
 
 
       <div className="content-center media-header">
-        <h3 className='text-1'>Related Photos</h3>
-        <span className='text-2'>* hover your mouse over the item to play</span>
+        {/* <h3 className='text-1 ts-2'>Related Photos</h3>
+        <span className='text-2 ts-8'>* hover your mouse over the item to play</span> */}
+
+        <h3 className='text-1 ts-2'>Search photo: 
+          <span className='text-1 ts-8 search-words'>man on the gray</span></h3>
+        <span className='text-2 ts-6 search-results'>10,000 results</span>
+      </div>
+
+      <div className="content-center search-labels">
+        <button className='content-center ts-8'>
+          <Svg svg='photo'/> Photos</button>
+        <button className='content-center ts-8'>
+          <Svg svg='video'/> Video</button>
       </div>
 
 
@@ -35,7 +46,7 @@ let a = "6"
             className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -46,7 +57,7 @@ let a = "6"
               </article>
             </div>
             {/* <img src="/images/p1.jpg" alt=""/> */}
-            <video className="photo-item__video" muted preload>
+            <video className="photo-item__video" muted>
               <source src="https://player.vimeo.com/external/210741646.hd.mp4?s=93ebd660d233a825b1777328cf13d740f767ff84&profile_id=174&oauth2_token_id=57447761" type="video/mp4" />
             </video>
           </div>
@@ -57,7 +68,7 @@ let a = "6"
             className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -68,14 +79,14 @@ let a = "6"
               </article>
             </div>
             <video 
-              className="photo-item__video" muted preload>
+              className="photo-item__video" muted>
               <source src="https://player.vimeo.com/external/207561527.hd.mp4?s=a672f4505af1cd98c666607a1e9980ee39c08a86&profile_id=119&oauth2_token_id=57447761" type="video/mp4" />
             </video>
           </div>
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -90,7 +101,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -105,7 +116,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -120,7 +131,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -134,11 +145,11 @@ let a = "6"
           </div>
         </div>
 
-        <div className="media-wrapper">
+        {/* <div className="media-wrapper">
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -153,7 +164,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -168,7 +179,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -183,7 +194,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -198,7 +209,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -213,7 +224,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -225,13 +236,15 @@ let a = "6"
             </div>
             <img src="/images/p3.jpg" alt=""/>
           </div>
-        </div>
+        </div> */}
 
-          <div className="media-wrapper">
+
+
+        {/* <div className="media-wrapper">
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -246,7 +259,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -261,7 +274,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -276,7 +289,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -291,7 +304,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -306,7 +319,7 @@ let a = "6"
           <div className="image-wrapper">
             <div className="image-details">
               <article className='content-center'>
-                <span className='content-center text-2'>
+                <span className='content-center text-2 ts-7'>
                   <img src="/images/photographer.png" alt=""/>
                   Aiman Adlawan
                 </span>
@@ -318,7 +331,11 @@ let a = "6"
             </div>
             <img src="/images/p5.jpg" alt=""/>
           </div>
-        </div>
+        </div> */}
+
+
+
+        
       </div>
 
 
@@ -326,7 +343,7 @@ let a = "6"
 
 
       <div className="content-center load-wrapper">
-        <button className='text-2'>Load More</button>
+        <button className='text-2 ts-7'>Load More</button>
       </div>
 
 

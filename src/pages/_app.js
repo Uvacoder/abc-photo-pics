@@ -8,6 +8,7 @@ import '../../styles/intro/intro.css'
 import '../../styles/headers/topnav.css'
 import '../../styles/headers/top-header.css'
 import '../../styles/headers/mid-header.css'
+import '../../styles/headers/top-nav-small.css'
 
 // main css
 import '../../styles/main/main.css'

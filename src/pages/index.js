@@ -18,14 +18,15 @@ export default function Home() {
       <Head>
         <title>Foto Pics | Home</title>
         <link rel="icon" href="/images/logo.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
-      <Header />
+      <Header midheader='midheader' withInput={true}/>
 
       <main className='content-center media-container'>
         {/* <Photo /> */}
-        <Collections />
-        {/* <Media /> */}
+        {/* <Collections /> */}
+        <Media />
 
       </main>
       <Footer />
