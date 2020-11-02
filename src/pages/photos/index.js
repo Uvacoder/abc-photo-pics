@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import Head from 'next/head'
-import Header from '../components/Header/Header'
-import Media from '../components/Media/Media'
-import Footer from '../components/Footer/Footer'
-import {APIRequest} from '../utils/apis/api'
-import headImgCover from '../utils/data/pagecover.json'
-import {Helpers} from '../utils/helpers/common'
+import Header from '../../components/Header/Header'
+import Media from '../../components/Media/Media'
+import Footer from '../../components/Footer/Footer'
+import {APIRequest} from '../../utils/apis/api'
+import headImgCover from '../../utils/data/pagecover.json'
+import {Helpers} from '../../utils/helpers/common'
 
-export default function Home({data}) {  
+export default function Photos({data}) {  
 
   const [mediafiles, setMedia] = useState({
     isSet: false,
@@ -20,19 +20,18 @@ export default function Home({data}) {
     if(!mediafiles.isSet) {
       (async function (){
 
-        // const data = await APIRequest.getHomeData(1)
-        
-        const dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
-        const consumedFiles = Helpers.splitArray(dataFiles)
+        // const dataFiles = mediafiles.media.concat(data.photos.photos)
+        // console.log(dataFiles)
+        const consumedFiles = Helpers.splitArray(data.photos.photos)
         setMedia({ 
           isSet: true, 
           screen: window.innerWidth, 
           consumedFiles: consumedFiles,
-          media: dataFiles,
+          media: data.photos.photos,
         })
 
-        // // add data
-        APIRequest.addData(2)
+        // // // add data
+        APIRequest.addPhotos(2)
       })()
     }
     window.addEventListener('resize', resizeScreen)
@@ -80,7 +79,7 @@ export default function Home({data}) {
   return (
     <div className='container'>
       <Head>
-        <title>Foto Pics | Home</title>
+        <title>Foto Pics | Photos</title>
         <link rel="icon" href="/images/logo.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
@@ -102,7 +101,7 @@ export default function Home({data}) {
 }
 
 
-Home.getInitialProps = async () => {
-  const data = await APIRequest.getHomeData(1)
+Photos.getInitialProps = async () => {
+  const data = await APIRequest.getPhotos(1)
   return {data}
 }

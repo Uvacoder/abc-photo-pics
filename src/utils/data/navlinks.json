@@ -2,6 +2,7 @@
 
 {
   "menus": ["Home", "Photos", "Videos", "Discover"],
+  "pages": ["warm", "dry", "designs", "tropics", "profession", "life", "adventure"],
   "collections": [
     {
       "name": "Popular Collections",

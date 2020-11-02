@@ -12,24 +12,21 @@ function TopNav(props) {
     const menu = document.querySelector('.top-nav-small-menu')
     menu.classList.toggle('show-side-menu')
   }
-  
+
   return (
     <div className="content-center top-nav">
-
       <div className="content-center top-nav-left">
         <Link href='/'>
-          <a>
-            <Svg svg='topnav'/>
-          </a>
+          <a><Svg svg='topnav'/></a>
         </Link>
         {props.withInput ? <InputWide /> : null}
       </div>
       
       <div className="top-nav-right text-2 ts-6">
-        <Link href='/'>
+        <Link href='/discover'>
           <a><span>Explore</span></a>
         </Link>
-        <Link href='/'>
+        <Link href='/my-favorites'>
           <a><span>My Favorites</span></a>
         </Link>
       </div>
@@ -39,23 +36,17 @@ function TopNav(props) {
           onClick={showMenu}>
           <Svg svg='burger'/>
         </div>
-
         <div className="top-nav-small-menu">
           <div className="menu-close"
             onClick={showMenu}>
             <Svg svg='close'/>
           </div>
           {props.withInput ? <InputShort /> : null}
-
           <div className="top-nav-menulist text-2">
-            <ul className='top-menu-list'>
-              <Menu menus={navdata.menus} />
-            </ul>
+            <ul className='top-menu-list'><Menu menus={navdata.menus} /></ul>
             <div className='top-menu-list'>
               <span>Stock Collections</span>
-              <ul>
-                <Collections collections={navdata.collections}/>
-              </ul>
+              <ul><Collections collections={navdata.collections}/></ul>
             </div>
           </div>
         </div>

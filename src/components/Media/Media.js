@@ -1,355 +1,48 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Svg from '../Svg/index'
+import MediaFiles from './components/Media'
 
-function Media() {
-let a = "6"
-  console.log(a++)
-
-  const playVid = (e) => {
-    let parent = e.target.closest('.image-wrapper')
-    parent.children[1].play()
-  }
-
-  const pauseVid = (e) =>{
-    let parent = e.target.closest('.image-wrapper')
-    parent.children[1].pause()
-  }
+function Media(props) {
+  
+  const media = props.medias.map((media, i) => {
+    return (
+      <MediaFiles key={i}
+        autopayvid={props.autopayvid}
+        medias={media}/>
+    )
+  })
 
   return (
     <div className='content-center photo-wrapper'>
-
-
 
       <div className="content-center media-header">
         {/* <h3 className='text-1 ts-2'>Related Photos</h3>
         <span className='text-2 ts-8'>* hover your mouse over the item to play</span> */}
 
-        <h3 className='text-1 ts-2'>Search photo: 
+        {/* <h3 className='text-1 ts-2'>Search photo: 
           <span className='text-1 ts-8 search-words'>man on the gray</span></h3>
-        <span className='text-2 ts-6 search-results'>10,000 results</span>
+        <span className='text-2 ts-6 search-results'>10,000 results</span> */}
       </div>
 
-      <div className="content-center search-labels">
+      {/* <div className="content-center search-labels">
         <button className='content-center ts-8'>
           <Svg svg='photo'/> Photos</button>
         <button className='content-center ts-8'>
           <Svg svg='video'/> Video</button>
-      </div>
-
+      </div> */}
 
       <div className="media-outer-wrapper">
-        <div className="media-wrapper">
-
-          <div 
-            onMouseEnter={(e)=>playVid(e)} 
-            onMouseOut={(e)=>pauseVid(e)}
-            className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            {/* <img src="/images/p1.jpg" alt=""/> */}
-            <video className="photo-item__video" muted>
-              <source src="https://player.vimeo.com/external/210741646.hd.mp4?s=93ebd660d233a825b1777328cf13d740f767ff84&profile_id=174&oauth2_token_id=57447761" type="video/mp4" />
-            </video>
-          </div>
-          
-          <div 
-            onMouseEnter={(e)=>playVid(e)} 
-            onMouseOut={(e)=>pauseVid(e)}
-            className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <video 
-              className="photo-item__video" muted>
-              <source src="https://player.vimeo.com/external/207561527.hd.mp4?s=a672f4505af1cd98c666607a1e9980ee39c08a86&profile_id=119&oauth2_token_id=57447761" type="video/mp4" />
-            </video>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p3.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p4.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p5.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p6.jpg" alt=""/>
-          </div>
-        </div>
-
-        {/* <div className="media-wrapper">
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p4.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p5.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p6.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p1.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p2.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p3.jpg" alt=""/>
-          </div>
-        </div> */}
-
-
-
-        {/* <div className="media-wrapper">
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p6.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p1.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p2.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p3.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p4.jpg" alt=""/>
-          </div>
-          <div className="image-wrapper">
-            <div className="image-details">
-              <article className='content-center'>
-                <span className='content-center text-2 ts-7'>
-                  <img src="/images/photographer.png" alt=""/>
-                  Aiman Adlawan
-                </span>
-                <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
-                </div>
-              </article>
-            </div>
-            <img src="/images/p5.jpg" alt=""/>
-          </div>
-        </div> */}
-
-
-
-        
+        {media}
       </div>
-
-
-
-
+      <div className="fade-div">
+        <div className="fade-element"></div>
+      </div>
 
       <div className="content-center load-wrapper">
-        <button className='text-2 ts-7'>Load More</button>
+        <button className='text-2 ts-7'
+        // onClick={()=>samp()}>Load More</button>
+          onClick={props.addMedia}>Load More</button>
       </div>
-
-
-
-
-
 
     </div>
   )

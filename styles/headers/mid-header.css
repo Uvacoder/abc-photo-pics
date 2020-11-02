@@ -20,6 +20,12 @@
   text-decoration: none;
   color: #818181;
   width: 80px;
+  transition: all 0.15s ease-in;
+}
+
+.mid-header-menu a:hover {
+  color: #EF9461;
+  transition: all 0.15s ease-in;
 }
 
 .mid-header-menu a:active {

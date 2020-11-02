@@ -1,7 +1,10 @@
 
 .media-container {
-  width: 100%;
   min-height: 700px;
+  width: 100%;
   justify-content: flex-start;
   background: #F4F4F4;
 }
+
+
+

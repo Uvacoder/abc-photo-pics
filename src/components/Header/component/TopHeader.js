@@ -1,10 +1,10 @@
 import React from 'react'
 import Svg from '../../Svg/index'
 
-function TopHeader() {
+function TopHeader(props) {
   return (
     <div className="content-center top-nav-header"
-      style={{'background': "url('/images/background.jpg') no-repeat center",'backgroundSize': 'cover'}}>
+      style={{'background': `url('${props.cover.link}') no-repeat center`,'backgroundSize': 'cover'}}>
       <span>{''}</span>
       <div className='content-center top-header'>
         <h2 className='text-1 ts-1'>Search stock photos and videos for free.</h2>
@@ -22,7 +22,7 @@ function TopHeader() {
         </span>
       </div>
       <div className='photo-by'>
-        <span className='text-2 ts-11'>Photo by: Aiman Adlawan</span>
+        <span className='text-2 ts-11'>Photo by: {props.cover.by}</span>
       </div>
     </div>
   )

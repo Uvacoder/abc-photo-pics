@@ -1,29 +1,24 @@
 import React from 'react'
 import Link from 'next/link'
+import navdata from '../../../utils/data/navlinks.json'
 
-function MidHeader() {
+
+function MidHeader(props) {
+
+  let navs = navdata.menus.map((nav, i) => {
+    return (
+      <div className={`content-center mid-header-menu 
+        ${props.active === nav ? 'active' : ''}`} key={i}>
+        <Link href={`/${nav.toLowerCase()}`}>
+          <a>{nav}</a>
+        </Link>
+      </div>
+    )
+  })
+
   return (
     <div className="content-center mid-header text-2 ts-4">
-      <div className="content-center mid-header-menu active">
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </div>
-      <div className="content-center mid-header-menu">
-        <Link href='/'>
-          <a>Photos</a>
-        </Link>
-      </div>
-      <div className="content-center mid-header-menu">
-        <Link href='/'>
-          <a>Videos</a>
-        </Link>
-      </div>
-      <div className="content-center mid-header-menu">
-        <Link href='/'>
-          <a>Discover</a>
-        </Link>
-      </div>
+      {navs}
     </div>
   )
 }
