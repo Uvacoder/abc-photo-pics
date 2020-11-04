@@ -4,6 +4,7 @@
   height: 60vh;
   justify-content: space-between;
   z-index: 50;
+  overflow: hidden;
   top: 0;
 }
 
@@ -13,12 +14,14 @@
   line-height: 1em;
   letter-spacing: -0.03em;
   font-weight: 500;
+  z-index: 100;
 }
 
 .top-header-input {
   flex-direction: row;
   height: 50px;
-  margin: 5px 0
+  margin: 5px 0;
+  z-index: 100;
 }
 
 .top-header-input input{
@@ -29,6 +32,14 @@
   letter-spacing: -0.01em;
   padding-left: 20px;
   background: #F5F5F5;
+}
+
+.top-nav-header video{
+  position: absolute;
+  right: 0;
+  bottom: 40vh;
+  min-width: 100%;
+  min-height: 60vh;
 }
 
 .top-header-input input:focus, .top-header-input button:focus {
@@ -59,10 +70,12 @@
   color: #FFB389;
   font-weight: 600;
   letter-spacing: -0.03em;
+  z-index: 100;
 }
 
 .photo-by {
   width: 100%;
+  z-index: 100;
 }
 
 .photo-by span{

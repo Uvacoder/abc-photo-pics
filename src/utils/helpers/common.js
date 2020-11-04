@@ -21,7 +21,6 @@ export const Helpers = (function(){
     
     // create a fresh array based on the length
     const result =  createArray(length)
-    const arrLength = Math.ceil(data.length / length)
     let counter = 0
   
     // split the array
@@ -30,8 +29,8 @@ export const Helpers = (function(){
       result[counter].push(data[i])
       // increment the counter
       i%length === 0 ? counter = 0 : counter++
-  
     }
+
     // return the new array
     return result
   }

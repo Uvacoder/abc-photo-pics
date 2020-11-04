@@ -31,62 +31,57 @@
   ],
   "photos": [
     {
-      "link": "",
-      "by": ""
+      "link": "https://res.cloudinary.com/luisfern/image/upload/v1604429694/foto-pics/p6_tiwhqg.jpg",
+      "by": "Billel Moula"
     },
     {
-      "link": "",
-      "by": ""
+      "link": "https://res.cloudinary.com/luisfern/image/upload/v1604430469/foto-pics/p3_vv7c9q.jpg",
+      "by": "George Lebada"
     },
     {
-      "link": "",
-      "by": ""
+      "link": "https://res.cloudinary.com/luisfern/image/upload/v1604429691/foto-pics/p5_vt90iz.jpg",
+      "by": "Fox"
     },
     {
-      "link": "",
-      "by": ""
+      "link": "https://res.cloudinary.com/luisfern/image/upload/v1604429995/foto-pics/p7_bjdsxn.jpg",
+      "by": "Kirsten Bühne"
     },
     {
-      "link": "",
-      "by": ""
+      "link": "https://res.cloudinary.com/luisfern/image/upload/v1604429692/foto-pics/p2_izccqm.jpg",
+      "by": "Maxime Francis"
     },
     {
-      "link": "",
-      "by": ""
+      "link": "https://res.cloudinary.com/luisfern/image/upload/v1604429694/foto-pics/p4_wgwzf5.jpg",
+      "by": "Francesco Ungaro"
     },
     {
-      "link": "",
-      "by": ""
+      "link": "https://res.cloudinary.com/luisfern/image/upload/v1604429692/foto-pics/p1_jmnpux.jpg",
+      "by": "Cátia Matos"
     }
   ],
   "videos": [
     {
-      "link": "",
-      "by": ""
+      "by": "Ruvim Miksanskiy",
+      "link": "https://player.vimeo.com/external/305250673.sd.mp4?s=cf9c5c628f24fc2cf33d652d62715bcdf8974701&profile_id=164&oauth2_token_id=57447761"
     },
     {
-      "link": "",
-      "by": ""
-    },
-    {
-      "link": "",
-      "by": ""
-    },
-    {
-      "link": "",
-      "by": ""
-    },
-    {
-      "link": "",
-      "by": ""
-    },
-    {
-      "link": "",
-      "by": ""
-    },
-    {
-      "link": "",
-      "by": ""
+      "by": "Ricardo Esquivel",
+      "link": "https://player.vimeo.com/external/312895181.sd.mp4?s=2d29fcdbc7b110e80d0cf3c8bee7a75843bb9625&profile_id=165&oauth2_token_id=57447761"
+    },{
+      "by": "Tom Fisk",
+      "link": "https://player.vimeo.com/external/293373689.sd.mp4?s=b0ff18802c6816a88537abf8b8b0a54221df860e&profile_id=164&oauth2_token_id=57447761"
+    },{
+      "by": "Kelly Lacy",
+      "link": "https://player.vimeo.com/external/357872394.sd.mp4?s=2c4ed9368cbb10ab2f54ecef27b5674195be8ce8&amp;profile_id=139&amp;oauth2_token_id=57447761"
+    },{
+      "by": "Distill",
+      "link": "https://player.vimeo.com/external/173395583.sd.mp4?s=2930fded11a1354d35a75ccbca63af995a3b40c4&profile_id=164&oauth2_token_id=57447761"
+    },{
+      "by": "Vimeo",
+      "link": "https://player.vimeo.com/external/189545487.sd.mp4?s=8cd2af1ec08f7ce121a5a6a09c78c05237943524&profile_id=164&oauth2_token_id=57447761"
+    },{
+      "by": "Pixabay",
+      "link": "https://player.vimeo.com/external/221214113.sd.mp4?s=2519b65070b6e2ea98b219a6c0fbd9d6e53a7242&profile_id=164&oauth2_token_id=57447761"
     }
   ]
 }

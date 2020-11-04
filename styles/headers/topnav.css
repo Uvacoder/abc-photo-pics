@@ -2,6 +2,7 @@
 .headers {
   width: 100%;
   min-height: 70px;
+  background: #023048;
 }
 
 .top-nav {
@@ -13,6 +14,11 @@
   justify-content: space-between;
   /* background: rgba(6,39,57,1); */
 }
+
+.add-dark {
+  background: #023048;
+}
+
 
 .top-nav-left {
   flex-direction: row;

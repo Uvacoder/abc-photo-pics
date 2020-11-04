@@ -18,58 +18,56 @@ export const APIRequest = (function() {
     return {photos, videos}
   }
 
-  // function to fetch another batch of data
-  // and save it to the local storage
-  const _addData = async (n) => {
-    // fetch data and save to localStorage
-    const data = await _getHomeData(n)
-    const media = JSON.stringify({data, page: n})
-    localStorage.setItem('samples', media)
-  }
-
+  // function to get additional photo data
   const _getPhotos = async (n) => {
     // generate url
-    const PhotoUrl = `v1/curated?per_page=${n}&per_page=21`
+    const PhotoUrl = `v1/curated?page=${n}&per_page=15`
     // fetch data
     const photos = await _fetchData(PhotoUrl)
     return {photos}
   }
-
+  
+  // function to get additional photo data
+  const _getVideos = async (n) => {
+    // generate url
+    const PhotoUrl = `videos/popular?page=${n}&per_page=22`
+    // fetch data
+    const videos = await _fetchData(PhotoUrl)
+    return {videos}
+  }
+  
   // function to fetch another batch of data
   // and save it to the local storage
-  const _addPhotos = async (n) => {
+  const _addData = async (m, n) => {
+    let data = {}
     // fetch data and save to localStorage
-    const data = await _getPhotos(n)
-    const photos = JSON.stringify({data, page: n})
-    localStorage.setItem('samples', photos)
+    if(m === 'all') {
+      data = await _getHomeData(n)
+    } else if(m === 'photo') {
+      data = await _getPhotos(n)
+    } else if (m === 'video') {
+      data = await _getVideos(n)
+    }
+
+    const media = JSON.stringify({data, page: n})
+    localStorage.setItem('samples', media)
   }
-
-
-
-  // const data = {photos, videos}
-  // const a = JSON.stringify({data, page: 1})
-  
-  // const b = localStorage.getItem('samples')
-  // const c = JSON.parse(b)
-  // return ({...c.data})
-  // return {b}
-
-
-  
+ 
   
   return {
     getHomeData(n) {
       return _getHomeData(n);
     },
-    addData(n){
-      return _addData(n)
+    addData(m, n){
+      return _addData(m, n)
     },
     getPhotos(n){
       return _getPhotos(n)
     },
-    addPhotos(n){
-      return _addPhotos(n)
-    }
+    getVideos(n){
+      return _getVideos(n)
+    },
+    
 
   }
   
@@ -77,7 +75,6 @@ export const APIRequest = (function() {
 
 
 
-  
   
   
   

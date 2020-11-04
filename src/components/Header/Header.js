@@ -9,7 +9,8 @@ function Header(props) {
     <>
       <header className='headers'>
         <TopNav withInput={props.withInput}/>
-        { props.midheader ? <TopHeader cover={props.cover}/> : null }
+        { props.midheader ? 
+          <TopHeader cover={props.cover} src={props.src}/> : null }
       </header>
       <MidHeader active='Photos'/>
     </>

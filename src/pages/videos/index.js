@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import Head from 'next/head'
-import Header from '../components/Header/Header'
-import Media from '../components/Media/Media'
-import Footer from '../components/Footer/Footer'
-import {APIRequest} from '../utils/apis/api'
-import headImgCover from '../utils/data/pagecover.json'
-import {Helpers} from '../utils/helpers/common'
+import Header from '../../components/Header/Header'
+import Media from '../../components/Media/Media'
+import Footer from '../../components/Footer/Footer'
+import {APIRequest} from '../../utils/apis/api'
+import headImgCover from '../../utils/data/pagecover.json'
+import {Helpers} from '../../utils/helpers/common'
 
-export default function Home({data}) {  
+export default function Videos({data}) {  
 
   const [mediafiles, setMedia] = useState({
     isSet: false,
@@ -20,19 +20,19 @@ export default function Home({data}) {
     if(!mediafiles.isSet) {
       (async function (){
 
-        // const data = await APIRequest.getHomeData(1)
+        // const dataFiles = mediafiles.media.concat(data.videos)
         
-        const dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
-        const consumedFiles = Helpers.splitArray(dataFiles)
+        const consumedFiles = Helpers.splitArray(data.videos.videos)
+        // console.log(data.videos.videos)
         setMedia({ 
           isSet: true, 
           screen: window.innerWidth, 
           consumedFiles: consumedFiles,
-          media: dataFiles,
+          media: data.videos.videos,
         })
 
-        // // add data
-        APIRequest.addData('all', 2)
+        // // // // add data
+        APIRequest.addData('video', 2)
       })()
     }
     window.addEventListener('resize', resizeScreen)
@@ -74,30 +74,30 @@ export default function Home({data}) {
       media: newFiles,
     })
     // request new data
-    APIRequest.addData('all', data.page + 1)
+    APIRequest.addData('video', data.page + 1)
   }
-  
+
   return (
     <div className='container'>
       <Head>
-        <title>Foto Pics | Home</title>
+        <title>Foto Pics | Videos</title>
         <link rel="icon" href="/images/logo.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
       <Header 
         midheader='midheader'
-        cover='photo'
-        src={Helpers.getDay(headImgCover.home)}/>
+        cover='video'
+        src={Helpers.getDay(headImgCover.videos)}/>
 
       <main className='content-center media-container'>
         {mediafiles.isSet ? 
           <Media medias={mediafiles.consumedFiles}
             top={mediafiles.top}
             addMedia={addMedia}
-            toPlay={true}
-            title=''
-            autoplayvid={false}/> : null}
+            toPlay={false}
+            title='Curated Videos'
+            autoplayvid={true}/> : null}
       </main>
       <Footer />
     </div>
@@ -105,7 +105,13 @@ export default function Home({data}) {
 }
 
 
-Home.getInitialProps = async () => {
-  const data = await APIRequest.getHomeData(1)
+Videos.getInitialProps = async () => {
+  const data = await APIRequest.getVideos(1)
   return {data}
 }
+
+
+
+
+
+

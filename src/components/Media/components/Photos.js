@@ -25,3 +25,12 @@ function Photos(props) {
 }
 
 export default Photos
+
+
+// leaveas = cátia matos
+// city = Maxime Francis
+// iguana = George lebada
+// turtle = Francesco Ungaro
+// koi = fox
+// mountain = billel moula
+// hen =kirsten-bühne

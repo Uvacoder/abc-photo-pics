@@ -7,7 +7,8 @@ function Media(props) {
   const media = props.medias.map((media, i) => {
     return (
       <MediaFiles key={i}
-        autopayvid={props.autopayvid}
+        toPlay={props.toPlay}
+        autoplayvid={props.autoplayvid}
         medias={media}/>
     )
   })
@@ -16,8 +17,10 @@ function Media(props) {
     <div className='content-center photo-wrapper'>
 
       <div className="content-center media-header">
-        {/* <h3 className='text-1 ts-2'>Related Photos</h3>
-        <span className='text-2 ts-8'>* hover your mouse over the item to play</span> */}
+        <h3 className='text-1 ts-2'>{props.title}</h3>
+        <span className='text-2 ts-8'>
+          {!props.toPlay ? '* hover your mouse to play the video.' : ''}
+        </span>
 
         {/* <h3 className='text-1 ts-2'>Search photo: 
           <span className='text-1 ts-8 search-words'>man on the gray</span></h3>

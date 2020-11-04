@@ -31,7 +31,7 @@ export default function Photos({data}) {
         })
 
         // // // add data
-        APIRequest.addPhotos(2)
+        APIRequest.addData('photo', 2)
       })()
     }
     window.addEventListener('resize', resizeScreen)
@@ -56,7 +56,7 @@ export default function Photos({data}) {
     // check if resized
     if(Helpers.resize(mediafiles.screen)) {
       updateState({
-        width: width,
+        screen: width,
         consumedFiles: Helpers.splitArray(mediafiles.media)
       })
     }
@@ -73,7 +73,7 @@ export default function Photos({data}) {
       media: newFiles,
     })
     // request new data
-    APIRequest.addData(data.page + 1)
+    APIRequest.addData('photo', data.page + 1)
   }
   
   return (
@@ -86,13 +86,16 @@ export default function Photos({data}) {
 
       <Header 
         midheader='midheader'
-        cover={Helpers.getDay(headImgCover.home)}/>
+        cover='photo'
+        src={Helpers.getDay(headImgCover.photos)}/>
 
       <main className='content-center media-container'>
         {mediafiles.isSet ? 
           <Media medias={mediafiles.consumedFiles}
             top={mediafiles.top}
             addMedia={addMedia}
+            toPlay={true}
+            title='Curated Photos'
             autoplayvid={false}/> : null}
       </main>
       <Footer />

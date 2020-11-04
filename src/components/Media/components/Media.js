@@ -8,6 +8,7 @@ function Media(props) {
     if(m.video_files){
       return ( 
         <Video media={m} key={i}
+          toPlay={props.toPlay}
           autoplayvid={props.autoplayvid}/> 
       )
     } else {

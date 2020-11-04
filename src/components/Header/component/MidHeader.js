@@ -9,7 +9,7 @@ function MidHeader(props) {
     return (
       <div className={`content-center mid-header-menu 
         ${props.active === nav ? 'active' : ''}`} key={i}>
-        <Link href={`/${nav.toLowerCase()}`}>
+        <Link href={`/${nav === 'Home' ? '' : nav.toLowerCase()}`}>
           <a>{nav}</a>
         </Link>
       </div>

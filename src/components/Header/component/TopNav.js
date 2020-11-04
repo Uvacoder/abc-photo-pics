@@ -14,7 +14,7 @@ function TopNav(props) {
   }
 
   return (
-    <div className="content-center top-nav">
+    <div className={`content-center top-nav ${props.withInput ? 'add-dark' : ''}`}>
       <div className="content-center top-nav-left">
         <Link href='/'>
           <a><Svg svg='topnav'/></a>
@@ -43,7 +43,8 @@ function TopNav(props) {
           </div>
           {props.withInput ? <InputShort /> : null}
           <div className="top-nav-menulist text-2">
-            <ul className='top-menu-list'><Menu menus={navdata.menus} /></ul>
+            <ul className='top-menu-list'>
+              <Menu menus={navdata.menus} /></ul>
             <div className='top-menu-list'>
               <span>Stock Collections</span>
               <ul><Collections collections={navdata.collections}/></ul>

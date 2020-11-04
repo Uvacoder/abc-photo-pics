@@ -114,7 +114,7 @@
     },
     {
       "name": "Marine Collections",
-      "buttonnames": ["Aquascapes", "Underwater", "Sea Mammals", "Fishing", "Oceans", "Aquariums"],
+      "buttonnames": ["Aquascapes", "Underwater", "Whales", "Fishing", "Oceans", "Aquariums"],
       "collections": [
         {
           "name": "Marine Life",
@@ -132,7 +132,7 @@
     },
     {
       "name": "Art Collections",
-      "buttonnames": ["Artists", "Murals", "Grafitti", "Museums", "Modern Art", "Renaissance Art"],
+      "buttonnames": ["Artists", "Murals", "Grafitti", "Museums", "Modern", "Vintage"],
       "collections": [
         {
           "name": "Paintings",
@@ -168,7 +168,7 @@
     },
     {
       "name": "Botany Collections",
-      "buttonnames": ["Gardens", "Sprouts", "Flowers", "Big Trees", "Pots", "Grass"],
+      "buttonnames": ["Gardens", "Sprouts", "Flowers", "Trees", "Pots", "Grass"],
       "collections": [
         {
           "name": "Plants",

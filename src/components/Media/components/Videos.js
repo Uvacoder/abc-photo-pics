@@ -36,7 +36,7 @@ function Videos(props) {
             </div>
           </article>
         </div>
-        <video className="photo-item__video" muted autoPlay loop>
+        <video className="photo-item__video" muted autoPlay={props.toPlay} loop>
           <source src={findSmallVideos(props.media.video_files)} type="video/mp4"/>
         </video>
       </div>
