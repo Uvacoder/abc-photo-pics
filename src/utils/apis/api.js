@@ -38,7 +38,7 @@ export const APIRequest = (function() {
   
   // function to fetch another batch of data
   // and save it to the local storage
-  const _addData = async (m, n) => {
+  const _addData = async (m, n, query) => {
     let data = {}
     // fetch data and save to localStorage
     if(m === 'all') {
@@ -47,12 +47,25 @@ export const APIRequest = (function() {
       data = await _getPhotos(n)
     } else if (m === 'video') {
       data = await _getVideos(n)
+    } else if (m === 'collections') {
+      data = await _getCollections(n, query)
     }
 
     const media = JSON.stringify({data, page: n})
     localStorage.setItem('samples', media)
   }
  
+  const _getCollections = async (n, query) => {
+    // generate url string
+    const PhotoUrl = `v1/search?page=${n}&query=${query}&per_page=18`
+    const VideoUrl = `videos/search?page=${n}&query=${query}&per_page=6`
+    
+    // fetch data
+    const photos = await _fetchData(PhotoUrl)
+    const videos = await _fetchData(VideoUrl)
+    return {photos, videos}
+  }
+
   
   return {
     getHomeData(n) {
@@ -67,15 +80,12 @@ export const APIRequest = (function() {
     getVideos(n){
       return _getVideos(n)
     },
-    
-
+    getCollections(n, query){
+      return _getCollections(n, query)
+    }
   }
-  
 })()
 
-
-
-  
   
   
 // fetch data

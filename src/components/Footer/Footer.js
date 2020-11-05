@@ -6,7 +6,7 @@ import Homelinks from './Components/Homelinks'
 import Stocklinks from './Components/Stocklinks'
 import Footerlinks from './Components/Footerlinks'
 
-function Footer() {
+function Footer(props) {
   return (
     <footer className='content-center'>
       <div className="footer-wrapper">
@@ -27,10 +27,14 @@ function Footer() {
         </div>
 
         <div className="footer-menus text-2">
-          <Homelinks navs={navlink.menus}/>
+          <Homelinks 
+            navs={navlink.menus}
+            active={props.active}/>
           <div className='footer-stocks'>
             <span>Stock Collections</span>
-            <Stocklinks navs={navlink.collections}/>
+            <Stocklinks 
+              navs={navlink.stocks}
+              active={props.active}/>
           </div>
         </div>
 

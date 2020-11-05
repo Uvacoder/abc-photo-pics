@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Button from './components/Buttons'
 import Images from './components/Frames'
 import data from '../../utils/data/navlinks.json'

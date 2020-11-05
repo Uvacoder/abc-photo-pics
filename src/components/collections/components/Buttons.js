@@ -1,10 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
+import {Helpers} from '../../../utils/helpers/common'
 
 function Buttons(props) {
   const buttons = props.btnLinks.map((btn, i) =>{
     return (
-      <Link href='/' key={i}>
+      <Link key={i}
+        href='/discover/[slug]'
+        as={`/discover/${Helpers.formatTextToUrl(btn)}`}>
         <a><span>{btn}</span></a>
       </Link>
     )

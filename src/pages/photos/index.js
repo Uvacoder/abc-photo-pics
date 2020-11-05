@@ -12,6 +12,7 @@ export default function Photos({data}) {
   const [mediafiles, setMedia] = useState({
     isSet: false,
     screen: 0,
+    active: '',
     consumedFiles: {},
     media: {},
   })
@@ -25,6 +26,7 @@ export default function Photos({data}) {
         const consumedFiles = Helpers.splitArray(data.photos.photos)
         setMedia({ 
           isSet: true, 
+          active: 'Photos',
           screen: window.innerWidth, 
           consumedFiles: consumedFiles,
           media: data.photos.photos,
@@ -87,6 +89,7 @@ export default function Photos({data}) {
       <Header 
         midheader='midheader'
         cover='photo'
+        active={mediafiles.active}
         src={Helpers.getDay(headImgCover.photos)}/>
 
       <main className='content-center media-container'>
@@ -98,7 +101,8 @@ export default function Photos({data}) {
             title='Curated Photos'
             autoplayvid={false}/> : null}
       </main>
-      <Footer />
+      <Footer 
+        active={mediafiles.active}/>
     </div>
   )
 }

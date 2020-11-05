@@ -21,7 +21,9 @@ function Footerlinks() {
       <div className="content-center footer-menu-icons">
         {navs}
       </div>
-      <span className='text-2 ts-9 text-copyright'>&#169; Aiman Adlawan 2020.</span>
+      <span className='text-2 ts-9 text-copyright'>
+        &#169; Aiman Adlawan 2020.
+      </span>
     </div>
   )
 }

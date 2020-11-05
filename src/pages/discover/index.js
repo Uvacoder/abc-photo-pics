@@ -20,12 +20,14 @@ export default function Photos() {
       <Header 
         midheader={false}
         withInput={true}
+        active='Discover'
         cover={Helpers.getDay(headImgCover.home)}/>
 
       <main className='content-center media-container'>
         <Collections />
       </main>
-      <Footer />
+      <Footer 
+        active='Discover'/>
     </div>
   )
 }

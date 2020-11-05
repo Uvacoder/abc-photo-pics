@@ -7,7 +7,8 @@ function homelinks(props) {
     return (
       <li className='ts-5' key={i}>
         <Link href={`${nav === 'Home' ? '/' : nav.toLowerCase()}`}>
-          <a className='active'>{nav}</a></Link>
+          <a className={`${props.active === nav ? 'active' : ''}`}>
+            {nav}</a></Link>
       </li>
     )
   })

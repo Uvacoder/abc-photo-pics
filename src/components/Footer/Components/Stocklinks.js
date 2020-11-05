@@ -6,8 +6,11 @@ function Stocklinks(props) {
   const navs = props.navs.map((nav, i) => {
     return (
       <li className='ts-5' key={i}>
-        <Link href={`/${Helpers.formatTextToUrl(nav.name)}`}>
-          <a>{nav.name}</a></Link>
+        <Link 
+          href='/discover/[slug]'
+          as={`/discover/${Helpers.formatTextToUrl(nav.link)}`}>
+          <a className={`${props.active.toLowerCase() === nav.link.toLowerCase() ? 'active' : ''}`}>
+            {nav.name}</a></Link>
       </li> )
   })
 

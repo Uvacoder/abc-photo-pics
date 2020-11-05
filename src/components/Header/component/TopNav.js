@@ -47,7 +47,7 @@ function TopNav(props) {
               <Menu menus={navdata.menus} /></ul>
             <div className='top-menu-list'>
               <span>Stock Collections</span>
-              <ul><Collections collections={navdata.collections}/></ul>
+              <ul><Collections stocks={navdata.stocks}/></ul>
             </div>
           </div>
         </div>

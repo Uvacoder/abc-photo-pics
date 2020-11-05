@@ -1,14 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import Head from 'next/head'
-import Header from '../components/Header/Header'
-import Media from '../components/Media/Media'
-import Footer from '../components/Footer/Footer'
-import {APIRequest} from '../utils/apis/api'
-import headImgCover from '../utils/data/pagecover.json'
-import {Helpers} from '../utils/helpers/common'
+import navlinks from '../../utils/data/navlinks.json'
+import {useRouter} from 'next/router'
+import Header from '../../components/Header/Header'
+import Media from '../../components/Media/Media'
+import Footer from '../../components/Footer/Footer'
+import {APIRequest} from '../../utils/apis/api'
+import headImgCover from '../../utils/data/pagecover.json'
+import {Helpers} from '../../utils/helpers/common'
 
-export default function Home({data}) {  
-
+export default function Discover({data}) {  
+  const router = useRouter()
   const [mediafiles, setMedia] = useState({
     isSet: false,
     screen: 0,
@@ -16,26 +18,33 @@ export default function Home({data}) {
     consumedFiles: {},
     media: {},
   })
-
+  
   useEffect(() => {
+    // backup - incase the query is not found in the params
+    // we will redirect to page to the not found page
+    if(!data) { 
+      router.replace('/')
+    }
+
+    console.log(router.query.slug)
+
     if(!mediafiles.isSet) {
-      (async function (){
-
-        // const data = await APIRequest.getHomeData(1)
-        
-        const dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
-        const consumedFiles = Helpers.splitArray(dataFiles)
-        setMedia({ 
-          isSet: true,
-          active: 'Home',
-          screen: window.innerWidth, 
-          consumedFiles: consumedFiles,
-          media: dataFiles,
-        })
-
-        // // add data
-        APIRequest.addData('all', 2)
-      })()
+      if(data){
+        (async function (){
+          const dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
+          const consumedFiles = Helpers.splitArray(dataFiles)
+          setMedia({ 
+            isSet: true, 
+            active: Helpers.formatText(router.query.slug),
+            screen: window.innerWidth, 
+            consumedFiles: consumedFiles,
+            media: data.photos.photos,
+          })
+          
+          // add data
+          APIRequest.addData('photo', 2)
+        })()
+      }
     }
     window.addEventListener('resize', resizeScreen)
     
@@ -43,6 +52,7 @@ export default function Home({data}) {
       window.removeEventListener('resize', resizeScreen)
     }
   })
+  
   
   // update the state when the resizing 
   // width mets requirement for change
@@ -76,22 +86,23 @@ export default function Home({data}) {
       media: newFiles,
     })
     // request new data
-    APIRequest.addData('all', data.page + 1)
+    APIRequest.addData('photo', data.page + 1)
   }
   
   return (
     <div className='container'>
       <Head>
-        <title>Foto Pics | Home</title>
+        <title>Foto Pics | Photos</title>
         <link rel="icon" href="/images/logo.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
       <Header 
-        midheader='midheader'
+        midheader={false}
         cover='photo'
+        withInput={true}
         active={mediafiles.active}
-        src={Helpers.getDay(headImgCover.home)}/>
+        src={Helpers.getDay(headImgCover.photos)}/>
 
       <main className='content-center media-container'>
         {mediafiles.isSet ? 
@@ -99,7 +110,7 @@ export default function Home({data}) {
             top={mediafiles.top}
             addMedia={addMedia}
             toPlay={true}
-            title=''
+            title={mediafiles.active}
             autoplayvid={false}/> : null}
       </main>
       <Footer 
@@ -109,7 +120,19 @@ export default function Home({data}) {
 }
 
 
-Home.getInitialProps = async () => {
-  const data = await APIRequest.getHomeData(1)
+Discover.getInitialProps = async (ctx) => {
+  let data;
+  const {query} = ctx
+  const collections = navlinks.allcollections
+  
+  // filter if data exists in the parameters
+  const isExists = Helpers.checkIfExists(query.slug, collections)
+
+  if(!isExists) {
+    data = false
+  } else {
+    data = await APIRequest.getCollections(1, query.slug)
+  }
+
   return {data}
 }

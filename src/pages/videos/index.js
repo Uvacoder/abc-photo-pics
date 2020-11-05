@@ -12,6 +12,7 @@ export default function Videos({data}) {
   const [mediafiles, setMedia] = useState({
     isSet: false,
     screen: 0,
+    active: '',
     consumedFiles: {},
     media: {},
   })
@@ -26,6 +27,7 @@ export default function Videos({data}) {
         // console.log(data.videos.videos)
         setMedia({ 
           isSet: true, 
+          active: 'Videos',
           screen: window.innerWidth, 
           consumedFiles: consumedFiles,
           media: data.videos.videos,
@@ -88,6 +90,7 @@ export default function Videos({data}) {
       <Header 
         midheader='midheader'
         cover='video'
+        active={mediafiles.active}
         src={Helpers.getDay(headImgCover.videos)}/>
 
       <main className='content-center media-container'>
@@ -99,7 +102,8 @@ export default function Videos({data}) {
             title='Curated Videos'
             autoplayvid={true}/> : null}
       </main>
-      <Footer />
+      <Footer 
+        active={mediafiles.active}/>
     </div>
   )
 }

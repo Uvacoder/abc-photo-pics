@@ -2,7 +2,42 @@
 
 {
   "menus": ["Home", "Photos", "Videos", "Discover"],
-  "pages": ["warm", "dry", "designs", "tropics", "profession", "life", "adventure"],
+  "pages": ["warm", "dry", "designs", "tropics", "career", "life", "adventure"],
+  "stocks": [
+    {
+      "name": "Fashion Collections",
+      "link": "fashion"
+    },
+    {
+      "name": "Stripes Collections",
+      "link": "stripes"
+    },
+    {
+      "name": "Fitness Collections",
+      "link": "fitness"
+    },
+    {
+      "name": "Vintage Stocks",
+      "link": "vintage"
+    },
+    {
+      "name": "Machines Collections",
+      "link": "machines"
+    },
+    {
+      "name": "Schools Photos",
+      "link": "schools"
+    },
+    {
+      "name": "Family Collections",
+      "link": "family"
+    },
+    {
+      "name": "Sunset Collections",
+      "link": "sunset"
+    }
+  ],
+   "allcollections": ["Celebrate", "Trends", "Clothing", "Cars", "Liquors", "Traveling", "Birthdays", "seasons", "Conversations", "Kitchens", "Parking", "Construction", "Relaxing", "Beach", "Swim", "House Interior", "Streets and Alleys", "Vacations", "Fish", "Felines", "Birds", "Insects", "Mammals", "Reptiles", "Cute Cats", "Animals", "Wild Animals", "Moutains", "Vegetables", "Buildings", "Sunrise", "Fruits", "Lanscapes", "Nature", "Food", "Cities","Woods", "Waterfalls", "Fantasy", "Textured", "Stars", "Pastels", "Art Background", "Pretty Background", "Florals", "Diet", "Yoga", "Excercise", "Medicine", "Fitness", "Nutrition", "Health and Lifestyle", "Healthy Food", "Wellness", "Aquascapes", "Underwater", "Whales", "Fishing", "Oceans", "Aquariums", "Marine Life", "Seascapes", "Sea Fish", "Artists", "Murals", "Grafitti", "Museums", "Modern", "Vintage", "Paintings", "Sculptures", "Artworks", "Wines", "Brewery", "Vodka", "Rhum", "Coffee", "Milk", "Fresh Juice", "Water", "Fresh Tea", "Gardens", "Sprouts", "Flowers", "Trees", "Pots", "Grass", "Plants", "Seeds", "Trees", "fashion", "stripes", "fitness", "vintage", "machines", "schools", "family", "sunset"],
   "collections": [
     {
       "name": "Popular Collections",
@@ -31,7 +66,7 @@
           "images": ["house-interiors01","house-interiors02","house-interiors03"]
         },
         {
-          "name": "Streets & Alleys",
+          "name": "Streets and Alleys",
           "images": ["streets-&-alleys01","streets-&-alleys02","streets-&-alleys03"]
         },
         {
@@ -76,6 +111,7 @@
         }
       ]
     },
+
     {
       "name": "Background Photos",
       "buttonnames": ["Woods", "Waterfalls", "Fantasy", "Textured", "Stars", "Pastels"],
@@ -99,7 +135,7 @@
       "buttonnames": ["Diet", "Yoga", "Excercise", "Medicine", "Fitness", "Nutrition"],
       "collections": [
         {
-          "name": "Health & Lifestyle",
+          "name": "Health and Lifestyle",
           "images": ["health-&-lifestyle01","health-&-lifestyle02","health-&-lifestyle03"]
         },
         {

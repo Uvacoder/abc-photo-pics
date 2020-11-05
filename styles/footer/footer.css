@@ -1,9 +1,10 @@
 
 footer {
   width: 100%;
-  height: 480px;
+  height: 500px;
   background: #023048;
   justify-content: flex-end;
+  /* background: red; */
 }
 
 .footer-wrapper {

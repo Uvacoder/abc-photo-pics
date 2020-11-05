@@ -5,14 +5,11 @@ function Images(props) {
   const image = props.images.map((img, i) => {
     return (
       <img src={`/images/${img}.jpg`} 
-        alt={`sample image`} key={i}/>
-    )
+        alt={`sample image`} key={i}/> )
   })
 
   return (
-    <>
-      {image}
-    </>
+    <>{image}</>
   )
 }
 

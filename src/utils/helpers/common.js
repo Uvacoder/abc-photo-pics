@@ -115,8 +115,8 @@ export const Helpers = (function(){
     }
   }
 
-
-
+  // to check if the list of data set contains the needed
+  // data likeif photos or videos
   const checkIfEmpty = (arr, data) => {
     let media
     if(arr === 'photos') {
@@ -128,13 +128,43 @@ export const Helpers = (function(){
   }
 
 
+  // function to check if the query params 
+  // is listed on the collection of photos
+  const _checkIfExists = (query, lists) => {
+    return lists.some(list => {
+        return setName(list) === setName(query)
+    })
+  }
+
+  // format the text and covert it to a spaced text
+  const setName = (name) => {
+    let a = name.split('-')
+    let b = a.map(a1 => {
+      let c = a1.split('')
+      let f = c.map((d, i) => {
+        if (i === 0) {
+          return d.toUpperCase()
+        } else {
+          return d
+        }
+      })
+      return f.join('')
+    })
+    return b.join(' ')
+  }
 
 
-
-
-
-
-
+  // this function will extract the query string and use
+  // it to pass as a text to highlight the navlinks
+  const _formatText = (text) =>{
+    const query = text.split('-')
+    const x = query.map(y => {
+      let z = y.split('')
+      z[0] = z[0].toLocaleUpperCase()
+      return z.join('')
+    })
+    return x.join(' ')
+  }
 
 
 
@@ -160,6 +190,12 @@ export const Helpers = (function(){
     },
     getFromStorage() {
       return _getFromStorage()
+    },
+    checkIfExists(query, lists){
+      return _checkIfExists(query, lists)
+    },
+    formatText (text) {
+      return _formatText(text)
     }
   }
 })()

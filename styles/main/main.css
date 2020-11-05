@@ -1,10 +1,41 @@
 
 .media-container {
-  min-height: 700px;
+  min-height: 400px;
   width: 100%;
   justify-content: flex-start;
   background: #F4F4F4;
 }
 
+
+.redirect-container {
+  width: 1200px;
+  height: 400px;
+}
+
+.redirect-container h3{
+  color: #818181;
+  letter-spacing: -0.03em;
+}
+
+.redirect-container a {
+  text-decoration: none;
+  margin-top: 30px;
+  letter-spacing: -0.03em;
+  border: 1px solid #E9BBA0;
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: #858585;
+  transition: all 0.2s ease-in;
+}
+
+.redirect-container a:hover {
+  background: #FAE7DC;
+  transition: all 0.2s ease-in;
+}
+
+.redirect-container a:active {
+  transform: scale(0.8);
+  transition: all 0.2s ease-in;
+}
 
 

@@ -8,11 +8,15 @@ function Header(props) {
   return (
     <>
       <header className='headers'>
-        <TopNav withInput={props.withInput}/>
+        <TopNav 
+          withInput={props.withInput}/>
         { props.midheader ? 
-          <TopHeader cover={props.cover} src={props.src}/> : null }
+          <TopHeader 
+            cover={props.cover} 
+            active={props.active}
+            src={props.src}/> : null }
       </header>
-      <MidHeader active='Photos'/>
+      <MidHeader active={props.active}/>
     </>
   )
 }

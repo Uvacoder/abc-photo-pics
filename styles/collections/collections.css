@@ -42,9 +42,14 @@
   transition: all 0.2s ease-in;
 }
 
+.collection-buttons a span:active {
+  transform: scale(0.7);
+  transition: all 0.1s ease-in;
+}
+
 .collection-buttons a span:hover {
   background: #FAE7DC;
-  transition: all 0.2s ease-in;
+  transition: all 0.18s ease-in;
 }
 
 .collection-images-wrapper {
