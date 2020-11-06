@@ -23,10 +23,11 @@ export default function Discover({data}) {
     // backup - incase the query is not found in the params
     // we will redirect to page to the not found page
     if(!data) { 
-      router.replace('/')
+      router.replace('/404', window.location.path)
     }
 
-    console.log(router.query.slug)
+    const activeRoute = mediafiles.active.toLowerCase()
+    const query = router.query.slug
 
     if(!mediafiles.isSet) {
       if(data){
@@ -38,13 +39,31 @@ export default function Discover({data}) {
             active: Helpers.formatText(router.query.slug),
             screen: window.innerWidth, 
             consumedFiles: consumedFiles,
-            media: data.photos.photos,
+            media: dataFiles
           })
           
           // add data
-          APIRequest.addData('photo', 2)
+          APIRequest.addData('collections', 2, query)
         })()
       }
+    } else if (activeRoute != query){
+      (async function(){
+        const newData = await APIRequest.getCollections(1, query)
+        const dataFiles = Helpers.combineArray(newData.photos.photos, newData.videos.videos)
+        const consumedFiles = Helpers.splitArray(dataFiles)
+        
+        setMedia({
+          ...mediafiles,
+          isSet: true,
+          active: Helpers.formatText(router.query.slug),
+          screen: window.innerWidth,
+          consumedFiles: consumedFiles,
+          media: dataFiles
+        })
+        APIRequest.addData('collections', 2, query)
+      })()
+      
+      // console.log(mediafiles.consumedFiles)
     }
     window.addEventListener('resize', resizeScreen)
     
@@ -52,7 +71,10 @@ export default function Discover({data}) {
       window.removeEventListener('resize', resizeScreen)
     }
   })
+
   
+  
+
   
   // update the state when the resizing 
   // width mets requirement for change
@@ -86,13 +108,13 @@ export default function Discover({data}) {
       media: newFiles,
     })
     // request new data
-    APIRequest.addData('photo', data.page + 1)
+    APIRequest.addData('collections', data.page + 1, mediafiles.active)
   }
   
   return (
     <div className='container'>
       <Head>
-        <title>Foto Pics | Photos</title>
+        <title>Foto Pics | Discover Collections</title>
         <link rel="icon" href="/images/logo.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>

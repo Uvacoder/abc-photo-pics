@@ -21,9 +21,12 @@ function TopHeader(props) {
         <div className="content-center top-header-input">
           <input 
             className='ts-5'
+            value={props.value}
+            onChange={(e)=> props.change(e.target.value)}
             type="text"
             placeholder='Enter photo or video name'/>
-          <button>
+          <button
+            onClick={props.click}>
             <span><Svg svg='search'/></span>
           </button>
         </div>

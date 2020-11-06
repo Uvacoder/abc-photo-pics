@@ -19,7 +19,11 @@ function TopNav(props) {
         <Link href='/'>
           <a><Svg svg='topnav'/></a>
         </Link>
-        {props.withInput ? <InputWide /> : null}
+        {props.withInput ? 
+          <InputWide 
+            click={props.click}
+            value={props.inputValue}
+            change={(val)=> props.change(val)}/> : null}
       </div>
       
       <div className="top-nav-right text-2 ts-6">
@@ -41,13 +45,21 @@ function TopNav(props) {
             onClick={showMenu}>
             <Svg svg='close'/>
           </div>
-          {props.withInput ? <InputShort /> : null}
+          {props.withInput ? 
+            <InputShort 
+              value={props.inputValue}
+              click={props.click}
+              change={(val)=> props.change(val)}/> : null}
           <div className="top-nav-menulist text-2">
             <ul className='top-menu-list'>
-              <Menu menus={navdata.menus} /></ul>
+              <Menu 
+                menus={navdata.menus} 
+                active={props.active}/></ul>
             <div className='top-menu-list'>
               <span>Stock Collections</span>
-              <ul><Collections stocks={navdata.stocks}/></ul>
+              <ul><Collections 
+                active={props.active}
+                stocks={navdata.stocks}/></ul>
             </div>
           </div>
         </div>

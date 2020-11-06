@@ -51,10 +51,14 @@ export const APIRequest = (function() {
       data = await _getCollections(n, query)
     }
 
+    // set the data to a stingified format
+    // and save it to the localstorage
     const media = JSON.stringify({data, page: n})
     localStorage.setItem('samples', media)
   }
  
+  // this function get data from the collections library
+  // it need query strings to make request
   const _getCollections = async (n, query) => {
     // generate url string
     const PhotoUrl = `v1/search?page=${n}&query=${query}&per_page=18`
@@ -66,13 +70,28 @@ export const APIRequest = (function() {
     return {photos, videos}
   }
 
+  // function to get a single photo
+  const _getSinglePhoto = async (_id) => {
+    const URL =`v1/photos/${_id}`
+    // fetch data
+    const data = await _fetchData(URL)
+    return data
+  }
+
+  // function to get a single video
+  const _getSingleVideo = async (_id) => {
+    const URL = `videos/videos/${_id}`
+    // fetch data
+    const data = await _fetchData(URL)
+    return data
+  }
   
   return {
     getHomeData(n) {
       return _getHomeData(n);
     },
-    addData(m, n){
-      return _addData(m, n)
+    addData(m, n, query){
+      return _addData(m, n, query)
     },
     getPhotos(n){
       return _getPhotos(n)
@@ -82,7 +101,14 @@ export const APIRequest = (function() {
     },
     getCollections(n, query){
       return _getCollections(n, query)
+    },
+    getSinglePhoto(_id){
+      return _getSinglePhoto(_id)
+    },
+    getSingleVideo(_id) {
+      return _getSingleVideo(_id)
     }
+
   }
 })()
 
@@ -90,7 +116,8 @@ export const APIRequest = (function() {
   
 // fetch data
 const _fetchData = async (link) => {
-  const API_Key = '563492ad6f9170000100000183762ece794d430888b88bbd576c5b57';
+  // const API_Key = '563492ad6f9170000100000183762ece794d430888b88bbd576c5b57';
+  const API_Key = '563492ad6f91700001000001950cb66cf8be4962874ab78e2a7f5a94'
   const URL = 'https://api.pexels.com/'
 
   const result = await fetch(`${URL}${link}`, {

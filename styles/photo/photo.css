@@ -89,7 +89,7 @@
   font-weight: 600;
 }
 
-.ind-photo-download img{
+.ind-photo-download img, .ind-photo-download video {
   margin-top: 10px;
   width: 480px;
   height: auto;
@@ -131,7 +131,7 @@
   .photo-tags {
     width: 100%;
   }
-  .ind-photo-download img{
+  .ind-photo-download img, .ind-photo-download video {
     width: 450px;
   }
 }
@@ -150,7 +150,7 @@
   .photo-tags {
     width: 100%;
   }
-  .ind-photo-download img{
+  .ind-photo-download img, .ind-photo-download video {
     width: 420px;
   }
 }
@@ -162,7 +162,7 @@
   .artist img {
     width: 40px;
   }
-  .ind-photo-download img{
+  .ind-photo-download img, .ind-photo-download video {
     width: 380px;
   }
 }
@@ -171,7 +171,7 @@
   .ind-photo-wrapper {
     width: 400px;
   }
-  .ind-photo-download img{
+  .ind-photo-download img, .ind-photo-download video {
     width: 340px;
   }
 }
@@ -195,7 +195,7 @@
   .photo-tags {
     width: calc(100% - 36px);
   }
-  .ind-photo-download img{
+  .ind-photo-download img, .ind-photo-download video {
     width: calc(100% - 36px);
   }
 }

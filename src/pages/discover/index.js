@@ -8,6 +8,10 @@ import Collections from '../../components/Collections/Collections'
 
 export default function Photos() {  
  
+  // const a = 'https://www.pexels.com/photo/woman-and-man-having-a-discussion-while-sitting-on-steps-2977567/'
+  const a = 'https://www.pexels.com/photo/himalayan-salt-lamp-near-laptop-on-wooden-table-3653849/'
+  const b = a.split('/')
+  console.log(b[b.length-2])
   
   return (
     <div className='container'>
@@ -31,3 +35,4 @@ export default function Photos() {
     </div>
   )
 }
+

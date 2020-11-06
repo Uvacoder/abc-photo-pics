@@ -19,6 +19,7 @@ export default function NotFound() {
       <Header 
         midheader='midheader'
         cover='photo'
+        active='404'
         src={Helpers.getDay(headImgCover.home)}/>
 
       <main className='content-center media-container'>
@@ -31,7 +32,7 @@ export default function NotFound() {
           </Link>
         </div>
       </main>
-      <Footer />
+      <Footer active='404'/>
     </div>
   )
 }

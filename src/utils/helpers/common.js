@@ -166,7 +166,15 @@ export const Helpers = (function(){
     return x.join(' ')
   }
 
-
+  // function to sort the list of videos
+  // files and return the only list that has 
+  // the smallest file size 'sd'
+  const _findSmallVideos = (videos) => {
+    let video = videos.filter(vid => {
+      return vid.quality === 'sd'
+    })
+    return video[0].link
+  }
 
 
   return {
@@ -196,6 +204,9 @@ export const Helpers = (function(){
     },
     formatText (text) {
       return _formatText(text)
+    },
+    findSmallVideos(videos) {
+      return _findSmallVideos(videos)
     }
   }
 })()
