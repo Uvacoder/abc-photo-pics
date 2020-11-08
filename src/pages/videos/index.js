@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer'
 import {APIRequest} from '../../utils/apis/api'
 import headImgCover from '../../utils/data/pagecover.json'
 import {Helpers} from '../../utils/helpers/common'
+import Error from '../../components/Error/Error'
 
 export default function Videos({data}) {  
 
@@ -19,23 +20,28 @@ export default function Videos({data}) {
 
   useEffect(() => {
     if(!mediafiles.isSet) {
-      (async function (){
-
-        // const dataFiles = mediafiles.media.concat(data.videos)
-        
-        const consumedFiles = Helpers.splitArray(data.videos.videos)
-        // console.log(data.videos.videos)
-        setMedia({ 
-          isSet: true, 
+      if(data.videos.error){
+        setMedia({
           active: 'Videos',
-          screen: window.innerWidth, 
-          consumedFiles: consumedFiles,
-          media: data.videos.videos,
+          screen: window.innerWidth,
+          isSet: true,
+          error: true
         })
-
-        // // // // add data
-        APIRequest.addData('video', 2)
-      })()
+      } else {
+        (async function (){
+          const consumedFiles = Helpers.splitArray(data.videos.videos)
+          setMedia({ 
+            isSet: true, 
+            active: 'Videos',
+            screen: window.innerWidth, 
+            consumedFiles: consumedFiles,
+            media: data.videos.videos,
+          })
+          
+          // add data
+          APIRequest.addData('video', 2)
+        })()
+      }
     }
     window.addEventListener('resize', resizeScreen)
     
@@ -89,18 +95,19 @@ export default function Videos({data}) {
 
       <Header 
         midheader='midheader'
-        cover='video'
+        cover='videos'
         active={mediafiles.active}
         src={Helpers.getDay(headImgCover.videos)}/>
 
       <main className='content-center media-container'>
-        {mediafiles.isSet ? 
-          <Media medias={mediafiles.consumedFiles}
-            top={mediafiles.top}
-            addMedia={addMedia}
-            toPlay={false}
-            title='Curated Videos'
-            autoplayvid={true}/> : null}
+        {mediafiles.isSet ? mediafiles.error ? 
+          <Error /> :
+            <Media medias={mediafiles.consumedFiles}
+              top={mediafiles.top}
+              addMedia={addMedia}
+              toPlay={false}
+              title='Curated Videos'
+              autoplayvid={true}/> : null}
       </main>
       <Footer 
         active={mediafiles.active}/>

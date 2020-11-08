@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer'
 import {APIRequest} from '../../utils/apis/api'
 import headImgCover from '../../utils/data/pagecover.json'
 import {Helpers} from '../../utils/helpers/common'
+import Error from '../../components/Error/Error'
 
 export default function Photos({data}) {  
 
@@ -19,22 +20,28 @@ export default function Photos({data}) {
 
   useEffect(() => {
     if(!mediafiles.isSet) {
-      (async function (){
-
-        // const dataFiles = mediafiles.media.concat(data.photos.photos)
-        // console.log(dataFiles)
-        const consumedFiles = Helpers.splitArray(data.photos.photos)
-        setMedia({ 
-          isSet: true, 
+      if(data.photos.error){
+        setMedia({
           active: 'Photos',
-          screen: window.innerWidth, 
-          consumedFiles: consumedFiles,
-          media: data.photos.photos,
+          screen: window.innerWidth,
+          isSet: true,
+          error: true
         })
-
-        // // // add data
-        APIRequest.addData('photo', 2)
-      })()
+      } else {
+        (async function (){
+          const consumedFiles = Helpers.splitArray(data.photos.photos)
+          setMedia({ 
+            isSet: true, 
+            active: 'Photos',
+            screen: window.innerWidth, 
+            consumedFiles: consumedFiles,
+            media: data.photos.photos,
+          })
+          
+          // add data
+          APIRequest.addData('photo', 2)
+        })()
+      }
     }
     window.addEventListener('resize', resizeScreen)
     
@@ -88,18 +95,19 @@ export default function Photos({data}) {
 
       <Header 
         midheader='midheader'
-        cover='photo'
+        cover='photos'
         active={mediafiles.active}
         src={Helpers.getDay(headImgCover.photos)}/>
 
       <main className='content-center media-container'>
-        {mediafiles.isSet ? 
-          <Media medias={mediafiles.consumedFiles}
-            top={mediafiles.top}
-            addMedia={addMedia}
-            toPlay={true}
-            title='Curated Photos'
-            autoplayvid={false}/> : null}
+        {mediafiles.isSet ? mediafiles.error ? 
+          <Error /> :
+            <Media medias={mediafiles.consumedFiles}
+              top={mediafiles.top}
+              addMedia={addMedia}
+              toPlay={true}
+              title='Curated Photos'
+              autoplayvid={false}/> : null}
       </main>
       <Footer 
         active={mediafiles.active}/>

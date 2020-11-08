@@ -3,7 +3,9 @@ import Head from 'next/head'
 import Header from '../components/Header/Header'
 import Media from '../components/Media/Media'
 import Footer from '../components/Footer/Footer'
+import Intro from '../components/Intro/Intro'
 import {APIRequest} from '../utils/apis/api'
+import Error from '../components/Error/Error'
 import headImgCover from '../utils/data/pagecover.json'
 import {Helpers} from '../utils/helpers/common'
 
@@ -13,29 +15,39 @@ export default function Home({data}) {
     isSet: false,
     screen: 0,
     active: '',
+    withIntro: false,
     consumedFiles: {},
     media: {},
   })
 
   useEffect(() => {
     if(!mediafiles.isSet) {
-      (async function (){
-
-        // const data = await APIRequest.getHomeData(1)
-        
-        const dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
-        const consumedFiles = Helpers.splitArray(dataFiles)
-        setMedia({ 
-          isSet: true,
+      if(data.photos.error || data.videos.error){
+        updateState({
           active: 'Home',
           screen: window.innerWidth, 
-          consumedFiles: consumedFiles,
-          media: dataFiles,
+          isSet: true,
+          error: true
         })
+      } else {
+        (async function (){
+          const itemsFromStorage = Helpers.getStorage('samples')
 
-        // // add data
-        APIRequest.addData('all', 2)
-      })()
+          const dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
+          const consumedFiles = Helpers.splitArray(dataFiles)
+          updateState({ 
+            isSet: true,
+            active: 'Home',
+            withIntro: itemsFromStorage ? true : false,
+            screen: window.innerWidth, 
+            consumedFiles: consumedFiles,
+            media: dataFiles,
+          })
+          
+          // // add data
+          APIRequest.addData('all', 2)
+        })()
+      }
     }
     window.addEventListener('resize', resizeScreen)
     
@@ -87,16 +99,18 @@ export default function Home({data}) {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
 
+      { !mediafiles.withIntro ? <Intro /> : null }
+
       <Header 
         midheader='midheader'
-        cover='photo'
+        cover='photos'
         active={mediafiles.active}
         src={Helpers.getDay(headImgCover.home)}/>
 
       <main className='content-center media-container'>
-        {mediafiles.isSet ? 
+        {mediafiles.isSet ? mediafiles.error ? 
+          <Error /> : 
           <Media medias={mediafiles.consumedFiles}
-            top={mediafiles.top}
             addMedia={addMedia}
             toPlay={true}
             title=''

@@ -25,9 +25,9 @@
   margin-left:60px;
 }
 
-.top-nav-left a svg {
+.top-nav-left a img {
   width: 156px;
-  height: 35px;
+  height: 31px;
   transition: all 0.15s ease-in;
 }
 
@@ -157,9 +157,9 @@
   .top-nav-left {
     margin-left: 40px;
   }
-  .top-nav-left a svg {
+  .top-nav-left a img {
     width: 148px;
-    height: 33px;
+    height: 30px;
   }
   .top-input {
     margin-left: 30px;
@@ -179,9 +179,9 @@
   .top-nav-left {
     margin-left: 35px;
   }
-  .top-nav-left a svg {
+  .top-nav-left a img {
     width: 139px;
-    height: 31px;
+    height: 29px;
   }
   .top-input, .top-nav-right a:nth-child(2) {
     margin-left: 25px;
@@ -202,9 +202,9 @@
   .top-nav {
     height: 70px;
   }
-  .top-nav-left a svg {
+  .top-nav-left a img {
     width: 130px;
-    height: 29px;
+    height: 26px;
   }
   .top-input {
     height: 70px;
@@ -224,9 +224,9 @@
   .top-nav-left {
     margin-left: 30px;
   }
-  .top-nav-left a svg {
+  .top-nav-left a img {
     width: 121px;
-    height: 27px;
+    height: 24px;
   }
   .top-input {
     height: 75px;
@@ -247,9 +247,9 @@
   .top-nav-left {
     margin-left: 25px;
   }
-  .top-nav-left a svg {
+  .top-nav-left a img {
     width: 112px;
-    height: 25px;
+    height: 23px;
   }
   .top-input {
     height: 70px;

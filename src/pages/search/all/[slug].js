@@ -1,84 +1,81 @@
 import React, {useEffect, useState} from 'react'
 import Head from 'next/head'
-import navlinks from '../../utils/data/navlinks.json'
 import {useRouter} from 'next/router'
-import Header from '../../components/Header/Header'
-import Media from '../../components/Media/Media'
-import Footer from '../../components/Footer/Footer'
-import {APIRequest} from '../../utils/apis/api'
-import headImgCover from '../../utils/data/pagecover.json'
-import {Helpers} from '../../utils/helpers/common'
-import Error from '../../components/Error/Error'
+import Header from '../../../components/Header/Header'
+import Media from '../../../components/Media/Media'
+import Footer from '../../../components/Footer/Footer'
+import {APIRequest} from '../../../utils/apis/api'
+import headImgCover from '../../../utils/data/pagecover.json'
+import {Helpers} from '../../../utils/helpers/common'
+import Error from '../../../components/Error/Error'
 
-export default function Discover({data}) {  
+export default function Search({data, query}) {  
   const router = useRouter()
+
   const [mediafiles, setMedia] = useState({
     isSet: false,
     screen: 0,
-    active: '',
+    active: 'search',
+    query: '',
     consumedFiles: {},
     media: {},
   })
   
   useEffect(() => {
-    // backup - incase the query is not found in the params
-    // we will redirect to page to the not found page
-    if(!data) { 
+    if(data.status === 404 || data.error === 'Not Found') {
       router.replace('/404', window.location.pathname)
     }
-
-    const activeRoute = mediafiles.active.toLowerCase()
-    const query = router.query.slug
 
     if(!mediafiles.isSet) {
       if(data.photos.error || data.videos.error){
         setMedia({
-          active: Helpers.formatText(router.query.slug),
+          active: 'search',
           screen: window.innerWidth,
           isSet: true,
+          query: query,
           error: true
         })
-      } else if (data){
-        const dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
-        const consumedFiles = Helpers.splitArray(dataFiles)
+      } else {
+        let consumedFiles;
+        let dataFiles;
+
+        
+        if(data.videos.total_results <= 6) {
+          consumedFiles = Helpers.splitArray(data.photos.photos)
+          dataFiles = data.photos.photos
+        } else {
+          dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
+          consumedFiles = Helpers.splitArray(dataFiles)
+        }
         setMedia({ 
-          isSet: true, 
-          active: Helpers.formatText(router.query.slug),
+          isSet: true,
+          active: 'search',
+          query: query,
           screen: window.innerWidth, 
           consumedFiles: consumedFiles,
-          media: dataFiles
+          media: dataFiles,
         })
-        
         // add data
         APIRequest.addData('collections', 2, query)
       }
-    } else if (activeRoute != query){
-      (async function(){
+    } else if(mediafiles.query !== query){
+      (async function () {
         const newData = await APIRequest.getCollections(1, query)
-        if(newData.photos.error || newData.videos.error) {
-          setMedia({
-            active: Helpers.formatText(router.query.slug),
-            screen: window.innerWidth,
-            isSet: true,
-            error: true
-          })
-        } else {
-          const dataFiles = Helpers.combineArray(newData.photos.photos, newData.videos.videos)
-          const consumedFiles = Helpers.splitArray(dataFiles)
-          
-          setMedia({
-            ...mediafiles,
-            isSet: true,
-            active: Helpers.formatText(router.query.slug),
-            screen: window.innerWidth,
-            consumedFiles: consumedFiles,
-            media: dataFiles
-          })
-          APIRequest.addData('collections', 2, query)
-        }
+        const dataFiles = Helpers.combineArray(newData.photos.photos, newData.videos.videos)
+        const consumedFiles = Helpers.splitArray(dataFiles)
+
+        setMedia({
+          ...mediafiles,
+          isSet: true,
+          active: Helpers.formatText(router.query.slug),
+          screen: window.innerWidth,
+          consumedFiles: consumedFiles,
+          media: dataFiles
+        })
+        APIRequest.addData('collections', 2, query)
       })()
-      
     }
+    
     window.addEventListener('resize', resizeScreen)
     
     return function cleanupListener () {
@@ -108,7 +105,7 @@ export default function Discover({data}) {
   }
 
   async function addMedia () {
-    const data = Helpers.getFromStorage()
+    const data = Helpers.checkFromStorage()
     const newFiles = mediafiles.media.concat(data.dataFiles)
     const newconsumed = Helpers.splitArray(newFiles)
     
@@ -118,7 +115,7 @@ export default function Discover({data}) {
       media: newFiles,
     })
     // request new data
-    APIRequest.addData('collections', data.page + 1, mediafiles.active)
+    APIRequest.addData('collections', data.page + 1, mediafiles.query)
   }
   
   return (
@@ -131,19 +128,20 @@ export default function Discover({data}) {
 
       <Header 
         midheader={false}
-        cover='all'
+        cover='photo'
         withInput={true}
         active={mediafiles.active}
         src={Helpers.getDay(headImgCover.photos)}/>
 
       <main className='content-center media-container'>
         {mediafiles.isSet ? mediafiles.error ? 
-          <Error /> : 
+          <Error /> :
             <Media medias={mediafiles.consumedFiles}
               top={mediafiles.top}
               addMedia={addMedia}
               toPlay={true}
-              title={mediafiles.active}
+              title='Search words : '
+              keywords={query}
               autoplayvid={false}/> : null}
       </main>
       <Footer 
@@ -153,19 +151,9 @@ export default function Discover({data}) {
 }
 
 
-Discover.getInitialProps = async (ctx) => {
-  let data;
+Search.getInitialProps = async (ctx) => {
   const {query} = ctx
-  const collections = navlinks.allcollections
-  
-  // filter if data exists in the parameters
-  const isExists = Helpers.checkIfExists(query.slug, collections)
+  const data = await APIRequest.getCollections(1, query.slug)
 
-  if(!isExists) {
-    data = false
-  } else {
-    data = await APIRequest.getCollections(1, query.slug)
-  }
-
-  return {data}
+  return {data, query: query.slug}
 }

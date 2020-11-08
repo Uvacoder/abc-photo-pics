@@ -14,7 +14,10 @@ function Footer(props) {
         <div className="content-center footer-top-icons">
           <span className="footer-fotopics-icon">
             <Link href='/'>
-              <a><Svg svg='topnav'/></a>
+              <a>
+                <img src="/images/nav-logo.png" alt=""/>
+                {/* <Svg svg='topnav'/> */}
+                </a>
             </Link>
           </span>
           <span className="content-center footer-fotopics-icon text-2 ts-10">

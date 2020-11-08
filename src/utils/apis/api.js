@@ -1,7 +1,6 @@
 import pageData from '../data/navlinks.json'
 import {Helpers} from '../helpers/common'
 
-
 export const APIRequest = (function() {
   
   const _getHomeData = async (n) => {
@@ -116,8 +115,7 @@ export const APIRequest = (function() {
   
 // fetch data
 const _fetchData = async (link) => {
-  // const API_Key = '563492ad6f9170000100000183762ece794d430888b88bbd576c5b57';
-  const API_Key = '563492ad6f91700001000001950cb66cf8be4962874ab78e2a7f5a94'
+  const API_Key = 'Enter your api key here'
   const URL = 'https://api.pexels.com/'
 
   const result = await fetch(`${URL}${link}`, {

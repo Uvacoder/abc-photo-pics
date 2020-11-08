@@ -1,8 +1,9 @@
-
+import axios from 'axios'
 export const Helpers = (function(){
   
   // function to convert string into a hyphenated link
   const _formatTextToUrl = (text) => {
+    if(text === undefined) return 
     const t = text.toLowerCase()
     return t.split(' ').join('-')
   }
@@ -41,7 +42,7 @@ export const Helpers = (function(){
     // initiate an array and counter
     let arr = []
     let counter = 0
-  
+
     // loop into the array
     for (let i = 0; i < photos.length; i++) {
       // if array index is % 0
@@ -91,9 +92,7 @@ export const Helpers = (function(){
   // get data from localstorage
   const _getFromStorage = () => {
     // get data from storage
-    const a = localStorage.getItem('samples')
-    // parse data
-    const d = JSON.parse(a)
+    const d = _getStorage('samples')
 
     // separate data
     let photos = checkIfEmpty('photos', d.data)
@@ -106,6 +105,28 @@ export const Helpers = (function(){
       dataFiles = videos
     } else {
       dataFiles = _combineArray(photos, videos)
+    }
+
+    // combine  
+    return {
+      dataFiles,
+      page: d.page
+    }
+  }
+
+  // get data from localstorage
+  const _checkFromStorage = () => {
+    let dataFiles;
+    // get data from storage
+    const d = _getStorage('samples')
+
+    const photos = d.data.photos.photos
+    const videos = d.data.videos
+
+    if(videos.total_results < 6) {
+      dataFiles = d.data.photos.photos
+    } else {
+      dataFiles = _combineArray(photos, videos.videos)
     }
 
     // combine  
@@ -132,12 +153,12 @@ export const Helpers = (function(){
   // is listed on the collection of photos
   const _checkIfExists = (query, lists) => {
     return lists.some(list => {
-        return setName(list) === setName(query)
+        return _setName(list) === _setName(query)
     })
   }
 
   // format the text and covert it to a spaced text
-  const setName = (name) => {
+  const _setName = (name) => {
     let a = name.split('-')
     let b = a.map(a1 => {
       let c = a1.split('')
@@ -176,11 +197,38 @@ export const Helpers = (function(){
     return video[0].link
   }
 
+  // download the file
+  const _download = (l, title, page) => {
+    axios({
+      url: l, //your url
+      method: 'GET',
+      responseType: 'blob', // important
+    }).then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `${title}.${page === 'photos' ? 'jpg' : 'mp4'}`); //or any other extension
+      document.body.appendChild(link);
+      link.click();
+    });
+  }
+
+  // get data from storage
+  const _getStorage = (name) => {
+    // get data from storage
+    const items = localStorage.getItem(name)
+    // parse items and return 
+    return JSON.parse(items)
+  }
+
 
   return {
     formatTextToUrl(text) {
       return _formatTextToUrl(text)
     },
+    setName(text) {
+      return _setName(text)
+    }, 
     getDay (days) {
       return _getDay(days)
     },
@@ -207,16 +255,18 @@ export const Helpers = (function(){
     },
     findSmallVideos(videos) {
       return _findSmallVideos(videos)
+    },
+    checkFromStorage() {
+      return _checkFromStorage()
+    },
+    download(link, title, page){
+      return _download(link, title, page)
+    },
+    getStorage(text) {
+      return _getStorage(text)
     }
   }
 })()
-
-
-
-
-
-
-
 
 
 // create a new fresh set of array

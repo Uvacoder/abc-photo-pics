@@ -13,6 +13,7 @@ import Close from './Svg/Close'
 import Burger from './Svg/Burger'
 import Photo from './Svg/Photo'
 import Video from './Svg/Video'
+import HeartSolid from './Svg/HeartSolid'
 
 function Svg(props) {
 
@@ -28,6 +29,7 @@ function Svg(props) {
             props.svg === 'burger' ? <Burger /> : 
             props.svg === 'close' ? <Close /> : 
             props.svg === 'photo' ? <Photo /> : 
+            props.svg === 'heartsolid' ? <HeartSolid /> : 
             props.svg === 'video' ? <Video /> : 
             props.svg === 'heart' ? <Heart /> : null
 

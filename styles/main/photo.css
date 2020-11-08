@@ -179,7 +179,7 @@
 
 .image-wrapper article {
   flex-direction: row;
-  width: 480px;
+  width: 490px;
   height: 100px;
   background: linear-gradient(180deg, #314F60 0%, rgba(47, 76, 92, 0) 100%);
   justify-content: space-between;
@@ -215,7 +215,13 @@
 }
 
 .action-wrapper span {
-  margin-left: 15px
+  margin-left: 15px;
+  transition: all 0.1s ease-in;
+}
+
+.action-wrapper span:hover {
+  transform: scale(1.15);
+  transition: all 0.1s ease-in;
 }
 
 .action-wrapper span svg {
@@ -228,9 +234,13 @@
   cursor: auto;
 }
 
-.action-wrapper span svg:active {
-  transform: scale(1.45);
+.action-wrapper span:active {
+  transform: scale(1.4);
   transition: all 0.15s ease-in;
+}
+
+.action-wrapper span svg:hover {
+  cursor: pointer;
 }
 
 /* load button */
@@ -274,7 +284,7 @@
     width: 457px;
   }
   .image-wrapper article {
-    width: 424px;
+    width: 457px;
   }
 }
 

@@ -2,8 +2,10 @@ import React, {useState} from 'react'
 import TopNav from './component/TopNav'
 import TopHeader from './component/TopHeader'
 import MidHeader from './component/MidHeader'
+import {useRouter} from 'next/router'
 
 function Header(props) {
+  const router = useRouter()
   const [value, setValue] = useState('')
 
   const changeVal = (val) => {
@@ -11,14 +13,14 @@ function Header(props) {
   }
 
   const click = () => {
-    console.log('clicked')
+    router.replace('/search/all/[slug]', `/search/all/${value}`)
   }
-
   return (
     <>
       <header className='headers'>
         <TopNav 
           inputValue={value}
+          cover={props.cover} 
           change={(val) => changeVal(val)}
           active={props.active}
           click={click}

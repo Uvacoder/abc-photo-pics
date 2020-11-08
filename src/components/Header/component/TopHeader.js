@@ -4,13 +4,10 @@ import Svg from '../../Svg/index'
 function TopHeader(props) {
   return (
     <div className="content-center top-nav-header"
-      style={props.cover === 'photo' ?
-      
-      {'background': `url('${props.src.link}') no-repeat center`,'backgroundSize': 'cover'} :
-        {'background': '#023048'} }
-      >
+      style={props.cover === 'photos' ?
+        {'background': `url('${props.src.link}') no-repeat center`,'backgroundSize': 'cover'} : {'background': '#023048'}} >
 
-      {props.cover === 'video' ? 
+      {props.cover === 'videos' ? 
         <video className="photo-item__video" muted autoPlay loop>
           <source src={props.src.link} type="video/mp4"/>
         </video> : null }

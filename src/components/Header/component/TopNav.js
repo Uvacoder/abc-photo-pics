@@ -17,7 +17,10 @@ function TopNav(props) {
     <div className={`content-center top-nav ${props.withInput ? 'add-dark' : ''}`}>
       <div className="content-center top-nav-left">
         <Link href='/'>
-          <a><Svg svg='topnav'/></a>
+          <a>
+            <img src="/images/nav-logo.png" alt=""/>
+            {/* <Svg svg='topnav'/> */}
+            </a>
         </Link>
         {props.withInput ? 
           <InputWide 

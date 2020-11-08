@@ -2,16 +2,9 @@ import React from 'react'
 import Head from 'next/head'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
-import headImgCover from '../../utils/data/pagecover.json'
-import {Helpers} from '../../utils/helpers/common'
 import Collections from '../../components/Collections/Collections'
 
 export default function Photos() {  
- 
-  // const a = 'https://www.pexels.com/photo/woman-and-man-having-a-discussion-while-sitting-on-steps-2977567/'
-  const a = 'https://www.pexels.com/photo/himalayan-salt-lamp-near-laptop-on-wooden-table-3653849/'
-  const b = a.split('/')
-  console.log(b[b.length-2])
   
   return (
     <div className='container'>
@@ -25,7 +18,7 @@ export default function Photos() {
         midheader={false}
         withInput={true}
         active='Discover'
-        cover={Helpers.getDay(headImgCover.home)}/>
+        cover='all'/>
 
       <main className='content-center media-container'>
         <Collections />

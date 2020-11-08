@@ -1,12 +1,27 @@
 import React from 'react'
 import Svg from '../../Svg/index'
 import Fade from 'react-reveal/Fade'
+import {Helpers} from '../../../utils/helpers/common'
 import Link from 'next/link'
 
 function Photos(props) {
+
   const setUrl = (url) => {
     const sUrl = url.split('/')
     return sUrl[sUrl.length - 2]
+  }
+
+  const download = (e) => {
+    e.preventDefault()
+    const link = props.media.src.medium
+    let title = setUrl(props.media.url).split('-')
+    title.pop()
+    Helpers.download(link, title, 'photos')
+  }
+
+  const click = (e) => {
+     e.preventDefault() 
+     props.click(props.media)
   }
 
   return (
@@ -23,8 +38,10 @@ function Photos(props) {
                   {props.media.photographer}
                 </span>
                 <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
+                  <span onClick={(e)=>download(e)}><Svg svg='download'/></span>
+                  <span 
+                    onClick={(e)=>click(e)}>
+                    <Svg svg={'heart'}/></span>
                 </div>
               </article>
             </div>

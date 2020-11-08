@@ -17,7 +17,12 @@ function Media(props) {
     <div className='content-center photo-wrapper'>
 
       <div className="content-center media-header">
-        <h3 className='text-1 ts-2'>{props.title}</h3>
+        <h3 className='text-1 ts-2'>
+          {props.title}
+          {props.keywords ? 
+            <span className='text-1 ts-8 search-words'>
+              {props.keywords}</span> : null }
+        </h3>
         <span className='text-2 ts-8'>
           {!props.toPlay ? '* hover your mouse to play the video.' : ''}
         </span>
@@ -42,9 +47,10 @@ function Media(props) {
       </div>
 
       <div className="content-center load-wrapper">
-        <button className='text-2 ts-7'
-        // onClick={()=>samp()}>Load More</button>
-          onClick={props.addMedia}>Load More</button>
+        {props.noAddMedia ? null : 
+          <button className='text-2 ts-7'
+          // onClick={()=>samp()}>Load More</button>
+            onClick={props.addMedia}>Load More</button>}
       </div>
 
     </div>

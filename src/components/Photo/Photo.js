@@ -1,7 +1,6 @@
 import React from 'react'
 import Svg from '../Svg/index'
 import {Helpers} from '../../utils/helpers/common'
-import axios from 'axios'
 
 function Photo(props) {
   const page = props.media.page
@@ -10,9 +9,7 @@ function Photo(props) {
   const url = page === 'photos' ? 
     props.media.data.src.medium : 
     Helpers.findSmallVideos(props.media.data.video_files)
-  // const a = Helpers.findSmallVideos(props.media.data.video_files)
 
-  // console.log(a)
   return (
     <div className='content-center ind-photo-wrapper'>
       
@@ -47,7 +44,7 @@ function Photo(props) {
         </div>
         <button
           className='text-2 ts-7'
-          onClick={()=>download(url, tags, page)}>Download Photo</button>
+          onClick={()=>Helpers.download(url, tags, page)}>Download Photo</button>
       </div>
       
     </div>
@@ -56,20 +53,3 @@ function Photo(props) {
 
 export default Photo
 
-
-
-// download the file
-function download(l, title, page) {
-  axios({
-    url: l, //your url
-    method: 'GET',
-    responseType: 'blob', // important
-  }).then((response) => {
-    const url = window.URL.createObjectURL(new Blob([response.data]));
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', `${title}.${page === 'photos' ? 'jpg' : 'mp4'}`); //or any other extension
-    document.body.appendChild(link);
-    link.click();
-  });
-}

@@ -3,6 +3,7 @@ import {useRouter} from 'next/router'
 import Head from 'next/head'
 import Header from '../../components/Header/Header'
 import Media from '../../components/Media/Media'
+import Error from '../../components/Error/Error'
 import Footer from '../../components/Footer/Footer'
 import Photo from '../../components/Photo/Photo'
 import {APIRequest} from '../../utils/apis/api'
@@ -14,20 +15,19 @@ export default function Photos({data, page, tags}) {
 
   const [mediafiles, setMedia] = useState({
     isSet: false,
+    page: '',
     media: {},
   })
 
   useEffect(() => {
-
     if(data.status === 404 || data.error === 'Not Found') {
-      router.replace('/404', window.location.path)
-    } else {
-      if(!mediafiles.isSet) {
-        setMedia({
-          isSet: true,
-          media: { data, tags, page }
-        })
-      }
+      router.replace('/404', window.location.pathname)
+    } else if(!mediafiles.isSet) {
+      setMedia({
+        isSet: true,
+        page: Helpers.setName(page),
+        media: { data, tags, page }
+      })
     }
 
     window.addEventListener('resize', resizeScreen)
@@ -50,6 +50,7 @@ export default function Photos({data, page, tags}) {
     }
   }
 
+
   return (
     <div className='container'>
       <Head>
@@ -61,20 +62,14 @@ export default function Photos({data, page, tags}) {
       <Header 
         midheader={false}
         withInput={true}
-        cover='photo'
-        active='Photos'
+        cover='all'
+        active={mediafiles.page}
         src={Helpers.getDay(headImgCover.photos)}/>
 
       <main className='content-center media-container'>
-        {mediafiles.isSet ? 
-          <Photo media={mediafiles.media}/> : null}
-
-          {/* <Media medias={mediafiles.consumedFiles}
-            top={mediafiles.top}
-            addMedia={addMedia}
-            toPlay={true}
-            title='Curated Photos'
-            autoplayvid={false}/>  */}
+        {mediafiles.isSet ? mediafiles.error ? 
+          <Error /> : 
+            <Photo media={mediafiles.media}/> : null}
       </main>
       <Footer 
         active='Photos'/>
@@ -88,14 +83,16 @@ Photos.getInitialProps = async (ctx) => {
   const {query} = ctx
   const params = query.media.split('-')
   const _id= params.pop()
+  const tags = params.join(' ')
   
   if(query.slug === 'photos') {
     data = await APIRequest.getSinglePhoto(_id)
-  } else {
+  } else if (query.slug === 'videos') {
     data = await APIRequest.getSingleVideo(_id)
+  } else {
+    data = {status: 404, error: 'Not Found'}
   }
-  const tags = params.join(' ')
+
   
   return {data, page: query.slug, tags: tags}
-  // return {data: 'asd'}
 }

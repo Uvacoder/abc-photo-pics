@@ -17,6 +17,13 @@
   letter-spacing: -0.03em;
 }
 
+.redirect-container span {
+  color: #818181;
+  margin-top: 5px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
 .redirect-container a {
   text-decoration: none;
   margin-top: 30px;

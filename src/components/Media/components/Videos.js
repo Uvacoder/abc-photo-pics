@@ -25,6 +25,19 @@ function Videos(props) {
     return sUrl[sUrl.length - 2]
   }
 
+  const download = (e) => {
+    e.preventDefault()
+    const smallVideoLink = Helpers.findSmallVideos(props.media.video_files)
+    let title = setUrl(props.media.url).split('-')
+    title.pop()
+    Helpers.download(smallVideoLink, title, 'videos')
+  }
+
+  const click = (e) => {
+    e.preventDefault()
+    props.click(props.media)
+  }
+
   return (
     <Fade>
       <Link 
@@ -42,8 +55,8 @@ function Videos(props) {
                   {props.media.user.name}
                 </span>
                 <div className="content-center action-wrapper">
-                  <span><Svg svg='download'/></span>
-                  <span><Svg svg='heart'/></span>
+                  <span onClick={(e)=>download(e)}><Svg svg='download'/></span>
+                  <span onClick={(e)=>click(e)}><Svg svg='heart'/></span>
                 </div>
               </article>
             </div>
