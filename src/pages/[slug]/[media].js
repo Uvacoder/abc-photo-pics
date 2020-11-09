@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import Head from 'next/head'
 import Header from '../../components/Header/Header'
-import Media from '../../components/Media/Media'
 import Error from '../../components/Error/Error'
 import Footer from '../../components/Footer/Footer'
 import Photo from '../../components/Photo/Photo'
@@ -54,7 +53,7 @@ export default function Photos({data, page, tags}) {
   return (
     <div className='container'>
       <Head>
-        <title>Foto Pics | Photos</title>
+        <title>Foto Pics | Photo and Video Stocks</title>
         <link rel="icon" href="/images/logo.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>

@@ -121,7 +121,7 @@ export default function Search({data, query}) {
   return (
     <div className='container'>
       <Head>
-        <title>Foto Pics | Discover Collections</title>
+        <title>Foto Pics | Search Stocks</title>
         <link rel="icon" href="/images/logo.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>

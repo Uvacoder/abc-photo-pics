@@ -7,6 +7,7 @@ import Intro from '../components/Intro/Intro'
 import {APIRequest} from '../utils/apis/api'
 import Error from '../components/Error/Error'
 import headImgCover from '../utils/data/pagecover.json'
+import {SETFIREBASE} from '../utils/helpers/firebase'
 import {Helpers} from '../utils/helpers/common'
 
 export default function Home({data}) {  
@@ -20,6 +21,7 @@ export default function Home({data}) {
     media: {},
   })
 
+  
   useEffect(() => {
     if(!mediafiles.isSet) {
       if(data.photos.error || data.videos.error){
@@ -31,7 +33,7 @@ export default function Home({data}) {
         })
       } else {
         (async function (){
-          const itemsFromStorage = Helpers.getStorage('samples')
+          const itemsFromStorage = Helpers.getStorage('foto-pics')
 
           const dataFiles = Helpers.combineArray(data.photos.photos, data.videos.videos)
           const consumedFiles = Helpers.splitArray(dataFiles)

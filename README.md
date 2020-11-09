@@ -2,13 +2,12 @@
 
 > I have always wanted to create a project that displays wonderful stock images and videos. But I wanted to make it in a full website and is also presentable and useful. So I decided to build this project to the next level. It is inspired by Pexels.com whose Web APIs are used to run this application. 
 
-[View it live from your browser.](https://foto-pics.vercel.app)<br>
+View this on your browser [live](https://foto-pics.vercel.app).<br><br>
+View UX/UI design in [Behance](https://www.behance.net/gallery/106587429/Foto-Pics).<br><br>
 
 <div float="left">
-  <a href="https://youtu.be/gOpke_Eoiac">
-    <img src="https://github.com/Aimanski12/proj-resource/blob/master/libs/react/react27-foto-pics.gif" alt="screen shot">
-  </a>
-</div>
+  <img src="https://github.com/Aimanski12/proj-resource/blob/master/libs/react/react27-foto-pics.gif" alt="screen shot">
+</div><br><br>
 
 > Things I learned in this project;
   * How to design visual layouts of a website.

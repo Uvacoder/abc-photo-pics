@@ -115,7 +115,8 @@ export const APIRequest = (function() {
   
 // fetch data
 const _fetchData = async (link) => {
-  const API_Key = 'Enter your api key here'
+  
+  const API_Key = 'Enter your API_Key here'
   const URL = 'https://api.pexels.com/'
 
   const result = await fetch(`${URL}${link}`, {

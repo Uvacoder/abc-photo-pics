@@ -32,7 +32,7 @@ function TopHeader(props) {
         </span>
       </div>
       <div className='photo-by'>
-        <span className='text-2 ts-11'>{`${props.cover === 'photo' ? 'Photo' : 'Video'} by:`} {props.src.by}</span>
+        <span className='text-2 ts-11'>{`${props.cover === 'photos' ? 'Photo' : 'Video'} by:`} {props.src.by}</span>
       </div>
     </div>
   )

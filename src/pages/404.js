@@ -11,7 +11,7 @@ export default function NotFound() {
   return (
     <div className='container'>
       <Head>
-        <title>Foto Pics | Home</title>
+        <title>Foto Pics | Not Found</title>
         <link rel="icon" href="/images/logo.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Head>
