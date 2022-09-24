@@ -1,5 +1,7 @@
 ## Foto-Pics
 
+https://github.com/Aimanski12/foto-pics
+
 > I have always wanted to create a project that displays wonderful stock images and videos. But I wanted to make it in a full website and is also presentable and useful. So I decided to build this project to the next level. It is inspired by Pexels.com whose Web APIs are used to run this application. 
 
 View this on your browser [live](https://foto-pics.vercel.app).<br><br>
